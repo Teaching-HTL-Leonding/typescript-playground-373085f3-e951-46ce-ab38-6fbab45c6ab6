@@ -1,4 +1,6 @@
 function setup() {
-  // <<< Add your code here.
-  //     Only add code between the curly braces (`{}`).
+  createCanvas(400,400)
+
+  fill("blue")
+  circle(200,200,200)
 }

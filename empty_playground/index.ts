@@ -5,10 +5,10 @@ function setup() {
 }
 
  let x = 0;
- let diretion = 1
+ let diretion = 5
 
 function draw() {
-    background("lightblue")
+    background("lightblue");
     fill("yellow");
     circle(width / 2, height / 2,x);
     x+= diretion;

@@ -1,6 +1,6 @@
 function setup() {
   createCanvas(400, 400);
-
+ 
   // We want to use degrees, not rad. Want to learn more?
   //https://brilliant.org/wiki/degrees-radian/
   angleMode(DEGREES);
@@ -17,12 +17,12 @@ function setup() {
 
   noFill()
 
-  //  +--------------------------- x coordinate
-  //  |     +--------------------- y coordinate
-  //  |     |       +------------- width
-  //  |     |       |    +-------- height
-  //  |     |       |    |   +---- start angle
-  //  |     |       |    |   |  +- end angle
-  //  
-
+  //   +-------------------------- x coordinate
+  //   |   +---------------------- y coordinate
+  //   |   |   +------------------ width
+  //   |   |   |   +-------------- height
+  //   |   |   |   |   +---------- start angle
+  //   |   |   |   |   |  +------- end angle
+  //   v   v   v   v   v  v
+  arc(200,250,200,150,25,180)
 }

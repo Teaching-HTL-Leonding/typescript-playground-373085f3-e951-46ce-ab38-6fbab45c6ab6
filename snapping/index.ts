@@ -10,21 +10,20 @@ function mouseMoved() {
 
   background("lightblue");
 
-  stroke("white")
-  strokeWeight(4)
-   line(mouseX, mouseY, mouseX, mouseY - 15)
-  line(mouseX, mouseY, mouseX, mouseY + 15)
-
-  stroke("white")
-  strokeWeight(4)
-  line(mouseX, mouseY, mouseX - 15, mouseY)
-  line(mouseX, mouseY, mouseX + 15, mouseY)
-
-  stroke("black")
-  fill("white")
+  fill("black")
   text(`${mouseX} / ${mouseY}`, 5, height-5)
 
   const x:number=
   Math.round(mouseX/40)*40
+
+  const y:number=
+  Math.round(mouseY/40)*40
   
-}
+  stroke("white")
+  strokeWeight(4)
+line(x, y, x , y - 15)
+  line(x, y, x , y + 15)
+  line(x, y, x - 15, y )
+  line(x, y, x + 15, y )
+  }
+

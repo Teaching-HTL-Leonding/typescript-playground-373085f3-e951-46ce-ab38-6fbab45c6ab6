@@ -5,26 +5,26 @@ function setup() {
 
 function mouseMoved() {
 
-  const snap = 40; 
+  const snap = 40;
   const markerSize = 10;
 
   background("lightblue");
 
-stroke("grey")
+  stroke("grey")
   fill("white")
-  text(`${mouseX} / ${mouseY}`, 5, height-5)
+  text(`${mouseX} / ${mouseY}`, 5, height - 5)
 
-  const x:number=
-  Math.round(mouseX/40)*40
+  const x: number =
+    Math.round(mouseX / 40) * 40
 
-  const y:number=
-  Math.round(mouseY/40)*40
-  
+  const y: number =
+    Math.round(mouseY / 40) * 40
+
   stroke("white")
   strokeWeight(4)
-line(x, y, x , y - 15)
-  line(x, y, x , y + 15)
-  line(x, y, x - 15, y )
-  line(x, y, x + 15, y )
-  }
+  line(x, y, x, y - 15)
+  line(x, y, x, y + 15)
+  line(x, y, x - 15, y)
+  line(x, y, x + 15, y)
+}
 

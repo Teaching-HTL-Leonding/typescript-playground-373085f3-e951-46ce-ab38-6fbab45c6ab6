@@ -10,7 +10,8 @@ function mouseMoved() {
 
   background("lightblue");
 
-  fill("black")
+stroke("grey")
+  fill("white")
   text(`${mouseX} / ${mouseY}`, 5, height-5)
 
   const x:number=

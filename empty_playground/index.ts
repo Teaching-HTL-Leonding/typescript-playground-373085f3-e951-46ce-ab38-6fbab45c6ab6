@@ -1,23 +1,13 @@
 function setup() {
-    createCanvas(300, 300)
-    
+    createCanvas(400, 400);
 
 }
 
- let x = 0;
- let diretion = 5
+let x: number = 0;
 
 function draw() {
-    background("lightblue");
-    fill("yellow");
-    circle(width / 2, height / 2,x);
-    x+= diretion;
-    if (x >= width) {
-        diretion = -5
-    }
-    if (x <= 0) {
+    background("yellow");
 
-    diretion = 5
-    }
-    }
-
+    x = x + 1;
+    circle(x, 150, 50)
+}

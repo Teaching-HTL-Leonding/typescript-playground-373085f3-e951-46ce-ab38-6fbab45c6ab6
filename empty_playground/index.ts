@@ -1,17 +1,12 @@
 function setup() {
+    createCanvas(300, 200);
+    background("aqua");
 
-    createCanvas(500,500)
-    background("lightblue")
+    noFill();
+    stroke("black");
+    strokeWeight(3);
+
+    ellipse(width / 2, height / 2, 200, 100);
 }
 
-function mouseMoved() {
-    stroke("black")
-    fill("white")
-    circle(mouseX, mouseY, 50)
 
-    noStroke()
-    fill("lightblue")
-    rect(0, height - 30, 100, 25)
-    fill("black")
-    text(`X: ${mouseX} Y: ${mouseY}`, 0, height - 10)
-}

@@ -1,19 +1,17 @@
 function setup() {
-    createCanvas(400, 400)
+
+    createCanvas(500,500)
+    background("lightblue")
 }
 
-let x:number = 0
-let direction: number = +2
+function mouseMoved() {
+    stroke("black")
+    fill("white")
+    circle(mouseX, mouseY, 50)
 
-function draw() {
-    background("red")
-
-    x = x + direction
-    if (x >= width) {
-        direction = -2
-    } 
-     else if(x <= 0) {
-        direction = +2
-    }
-    circle(x, height / 2, 50)
+    noStroke()
+    fill("lightblue")
+    rect(0, height - 30, 100, 25)
+    fill("black")
+    text(`X: ${mouseX} Y: ${mouseY}`, 0, height - 10)
 }

@@ -6,6 +6,8 @@ function setup() {
 let mousecordinates: string = '0/0'
 
 function mouseClicked() {
+  noStroke()
+
   background("lightblue")
   fill(10, 1000, 580)
   circle( mouseX, mouseY, 30)

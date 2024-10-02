@@ -1,18 +1,18 @@
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(500, 500);
   background("lightblue");
 }
 
+let mousecordinates: string = '0/0'
+
 function mouseClicked() {
-   stroke("black")
-    fill("white")
-    circle(mouseX, mouseY, 50)
+  background("lightblue")
+  fill("skyblue")
+  circle( mouseX, mouseY, 30)
+  
+  mousecordinates = `${mousecordinates}, ${mouseX}, ${mouseY}`
 
-    noStroke()
-    fill("lightblue")
-    rect(0, height - 30, 100, 25)
-    fill("black")
-    text(`X: ${mouseX} Y: ${mouseY}`, 0, height - 390)
-    if mouseClicked: text
-
+  fill("black")
+  text(mousecordinates, 5, 5, width - 10, height - 10 )
 }
+ 

@@ -7,7 +7,7 @@ let mousecordinates: string = '0/0'
 
 function mouseClicked() {
   background("lightblue")
-  fill("skyblue")
+  fill(10, 1000, 580)
   circle( mouseX, mouseY, 30)
   
   mousecordinates = `${mousecordinates}, ${mouseX}, ${mouseY}`
@@ -15,4 +15,3 @@ function mouseClicked() {
   fill("black")
   text(mousecordinates, 5, 5, width - 10, height - 10 )
 }
- 

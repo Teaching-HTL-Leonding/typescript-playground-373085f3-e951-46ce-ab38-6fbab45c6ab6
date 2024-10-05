@@ -29,6 +29,6 @@ function mouseClicked() {
 
     fill("white")
     textSize(30)
-    text(message, 150, height - 30)
+    text(message, 150, height - 25)
 }
 

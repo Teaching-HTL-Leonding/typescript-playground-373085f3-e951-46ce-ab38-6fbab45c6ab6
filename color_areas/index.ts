@@ -17,11 +17,11 @@ function mouseClicked() {
     let message: string
 
     if (mouseX < width / 3) {
-        message = "yellow"
+        message = "Yellow"
     } else if (mouseX < width / 3 * 2) {
-        message = "green"
+        message = "Green"
     } else {
-        message = "red"
+        message = "Red"
     }
 
     fill("black")
@@ -29,5 +29,6 @@ function mouseClicked() {
 
     fill("white")
     textSize(30)
-    text(message, 150, height - 20)
+    text(message, 150, height - 30)
 }
+

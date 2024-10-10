@@ -20,8 +20,6 @@ function setup() {
     circle(width / 4, height / 4, dicePointDiameter);
     circle(3 * width / 4, 3 * height / 4, dicePointDiameter);
   } else if (dice === 3) {
-    // Draw three dots (combination of 1 and 2)
-  }  else if (dice === 3) {
     circle(width / 4, height / 4, dicePointDiameter);
     circle(3 * width / 4, 3 * height / 4, dicePointDiameter);
     circle(width / 2, height / 2, dicePointDiameter);

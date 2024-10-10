@@ -20,17 +20,19 @@ function setup() {
 }
 
 function mouseClicked() {
+    const canvasheight: number = 200
+    const canvaswidth: number = 400
     
     fill("black")
     rect(100, 75, 200, 50)
 
      let message: string
 
-    if (mouseX < width / 2  && mouseX < height / 2 * 3) {
+    if (mouseX < canvaswidth / 2  && mouseY < canvasheight / 2 ) {
         message = "Yellow"
-    } else if (mouseX < width * 2  && mouseX < height / 1 * 2) {
+    } else if (mouseX >= canvaswidth / 2  && mouseY < canvasheight / 2) {
         message = "Green"
-    } else if(mouseX < width * 3  && mouseX < height / 1 * 2) {
+    } else if(mouseX > canvaswidth / 2  && mouseY > canvasheight / 2) {
         message = "Red"
     } else {
         message = "blue"

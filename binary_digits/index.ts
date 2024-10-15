@@ -3,7 +3,9 @@ function setup() {
   background(0)
 
   const num = Math.floor(random(0, 1_000_000));
-
+  const decimalNumber= num
+  const binaryString = "1010"
+  
 
   noFill()
   strokeWeight(2)

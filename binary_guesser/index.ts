@@ -9,7 +9,7 @@ function setup() {
 noStroke()
 fill("yellow")
 textSize(50)
-text(`${num} in Binary? `, 70, height - 200)
+text(`${num} in Binary? `, 70, height - 230)
 
   noFill()
   strokeWeight(2)

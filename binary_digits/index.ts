@@ -2,11 +2,8 @@ function setup() {
   createCanvas(580, 400)
   background(0)
 
-  const num = Math.floor(random(0, 50));
-  const binaryString = num.toString(2).padStart(6, '0')
-  const xOffset = 90
-    const startX = 60
-  
+  const num = Math.floor(random(0, 64));
+
 
   noFill()
   strokeWeight(2)
@@ -43,8 +40,39 @@ function setup() {
   noStroke();
   text(num, width / 2, height - 20);
 
-textSize(100)
-   for (let i = 0 ; i < binaryString.length ; i++) {
-     text(binaryString[i], startX + i * xOffset, height - 190);
-   }
+  textAlign(CENTER, CENTER);
+  fill("yellow");
+  noStroke();
+  textSize(100)
+  text(num % 2, width / 1.13, height - 190,);
+
+  textAlign(CENTER, CENTER);
+  fill("yellow");
+  noStroke();
+  textSize(100)
+  text(Math.floor(num / 2) % 2, width / 1.37, height - 190,);
+
+  textAlign(CENTER, CENTER);
+  fill("yellow");
+  noStroke();
+  textSize(100)
+  text(Math.floor(num / 4) % 2, width / 1.73, height - 190,);
+
+  textAlign(CENTER, CENTER);
+  fill("yellow");
+  noStroke();
+  textSize(100)
+  text(Math.floor(num / 8) % 2, width / 2.35, height - 190,);
+
+  textAlign(CENTER, CENTER);
+  fill("yellow");
+  noStroke();
+  textSize(100)
+  text(Math.floor(num / 16) % 2, width / 3.7, height - 190,);
+
+  textAlign(CENTER, CENTER);
+  fill("yellow");
+  noStroke();
+  textSize(100)
+  text(Math.floor(num / 32) % 2, width / 8.5, height - 190,);
 }

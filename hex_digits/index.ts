@@ -51,17 +51,17 @@ function setup() {
   textSize(100)
   const hexdigit2 =Math.floor(num/ 16) %16
   if(hexdigit2 === 10) {
-    text('A', width / 1.2, height - 190,)
+    text('A', width / 1.9, height - 190,)
   } else if(hexdigit2 === 11) {
-    text('B', width / 1.2, height - 190,)
+    text('B', width / 1.9, height - 190,)
   }  else if(hexdigit2 === 12) {
-    text('C', width / 1.2, height - 190,)
+    text('C', width / 1.9, height - 190,)
   }  else if(hexdigit2 === 13) {
-    text('D', width / 1.2, height - 190,)
+    text('D', width / 1.9, height - 190,)
   }  else if(hexdigit2 === 14) {
-    text('E', width / 1.2, height - 190,)
+    text('E', width / 1.9, height - 190,)
   }  else if(hexdigit2 === 15) {
-    text('F', width / 1.2, height - 190,) }
+    text('F', width / 1.9, height - 190,) }
 
   text(hexdigit2, width / 1.9, height - 190,)
 
@@ -71,16 +71,16 @@ function setup() {
   textSize(100)
    const hexdigit3 =Math.floor(num/ 256) %16
   if(hexdigit3 === 10) {
-    text('A', width / 1.2, height - 190,)
+    text('A', width / 4.9, height - 190,)
   } else if(hexdigit3 === 11) {
-    text('B', width / 1.2, height - 190,)
+    text('B', width / 4.9, height - 190,)
   }  else if(hexdigit3 === 12) {
-    text('C', width / 1.2, height - 190,)
+    text('C', width / 4.9, height - 190,)
   }  else if(hexdigit3 === 13) {
-    text('D', width / 1.2, height - 190,)
+    text('D', width / 4.9, height - 190,)
   }  else if(hexdigit3 === 14) {
-    text('E', width / 1.2, height - 190,)
+    text('E', width / 4.9, height - 190,)
   }  else if(hexdigit3 === 15) {
-    text('F', width / 1.2, height - 190,) }
+    text('F', width / 4.9, height - 190,) }
   text(hexdigit3, width / 4.9, height - 190,)
   }

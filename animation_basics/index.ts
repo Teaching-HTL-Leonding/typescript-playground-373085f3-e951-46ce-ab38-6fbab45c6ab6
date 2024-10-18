@@ -20,13 +20,13 @@ function preload() {
     necromancer0 = loadImage(`${BASE_URL}/Necromancer_01__WALK_000.png`);
     necromancer1 = loadImage(`${BASE_URL}/Necromancer_01__WALK_001.png`);
     necromancer2 = loadImage(`${BASE_URL}/Necromancer_01__WALK_002.png`);
-   necromancer3 = loadImage(`${BASE_URL}/Necromancer_01__WALK_003.png`);
-   necromancer4 = loadImage(`${BASE_URL}/Necromancer_01__WALK_004.png`);
-   necromancer5 = loadImage(`${BASE_URL}/Necromancer_01__WALK_005.png`);
-   necromancer6 = loadImage(`${BASE_URL}/Necromancer_01__WALK_006.png`);
-   necromancer7 = loadImage(`${BASE_URL}/Necromancer_01__WALK_007.png`);
-   necromancer8 = loadImage(`${BASE_URL}/Necromancer_01__WALK_008.png`);
-   necromancer9 = loadImage(`${BASE_URL}/Necromancer_01__WALK_009.png`);
+    necromancer3 = loadImage(`${BASE_URL}/Necromancer_01__WALK_003.png`);
+    necromancer4 = loadImage(`${BASE_URL}/Necromancer_01__WALK_004.png`);
+    necromancer5 = loadImage(`${BASE_URL}/Necromancer_01__WALK_005.png`);
+    necromancer6 = loadImage(`${BASE_URL}/Necromancer_01__WALK_006.png`);
+    necromancer7 = loadImage(`${BASE_URL}/Necromancer_01__WALK_007.png`);
+    necromancer8 = loadImage(`${BASE_URL}/Necromancer_01__WALK_008.png`);
+    necromancer9 = loadImage(`${BASE_URL}/Necromancer_01__WALK_009.png`);
 
 }
 
@@ -39,8 +39,8 @@ function setup() {
 
 let imageIndex = 0; // This variable will keep track of the current image (=frame) in the animation
 let x = -500; // This variable will keep track of the current position of the animation on the x-axis.
-              // By moving the sprite to the left, we can create the illusion of movement.
-              // We start at -500 because the the image contains a pretty wide whitespace on the left side.
+// By moving the sprite to the left, we can create the illusion of movement.
+// We start at -500 because the the image contains a pretty wide whitespace on the left side.
 
 function draw() {
     background("lightgray");
@@ -65,10 +65,10 @@ function draw() {
 
     // Move to the next image in the animation. If we reach the end, start over.
     imageIndex++;
-   if(imageIndex === 10) {imageIndex = 0;}
+    if (imageIndex === 10) { imageIndex = 0; }
 
     // Move the sprite to the right. If the sprite moved too far, set it back to the left.
     x += 5;
-    if(imageIndex = 10) {let x = 0}
+    if (x > width) {x = -500 }
     // <<< Add the logic to reset the sprite position to the left when it has moved too far to the right (> 500 pixels is a good threshold).
 }

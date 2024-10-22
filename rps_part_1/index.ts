@@ -24,25 +24,42 @@ function setup() {
 
     // Display the icons for "stone", "paper", and "scissors".
     textSize(75);
-   
+
     text("🪨", STONE_LEFT, height - 315);
     text("📃", PAPER_LEFT, height - 315);
     text("✂️", SCISSORS_LEFT, height - 315);
 }
 
 function mouseMoved() {
-    noFill()
-    strokeWeight(3)
-    stroke("yellow")
-    rect(50, 100, 100, 100)
-
-    noFill()
-    strokeWeight(3)
-    stroke("yellow")
-    rect(175, 100, 100, 100)
-
+    if (mouseX === 50 || mouseY === 75) {
         noFill()
-    strokeWeight(3)
-    stroke("yellow")
-    rect(300, 100, 100, 100)
+        strokeWeight(3)
+        stroke("yellow")
+        rect(50, 100, 100, 100)
+    } else if (mouseX === 150 || mouseY === 175) {
+        noFill()
+        strokeWeight(3)
+        stroke(0)
+        rect(50, 100, 100, 100)
+    } else if (mouseX === 175 || mouseY === 75) {
+        noFill()
+        strokeWeight(3)
+        stroke("yellow")
+        rect(175, 100, 100, 100)
+    } else if (mouseX === 275 || mouseY === 175) {
+        noFill()
+        strokeWeight(3)
+        stroke(0)
+        rect(175, 100, 100, 100)
+    } else if (mouseX === 300 || mouseY === 75) {
+        noFill()
+        strokeWeight(3)
+        stroke("yellow")
+        rect(300, 100, 100, 100)
+    } else if (mouseX === 400 || mouseY === 175) {
+        noFill()
+        strokeWeight(3)
+        stroke(0)
+        rect(300, 100, 100, 100)
+    }
 }

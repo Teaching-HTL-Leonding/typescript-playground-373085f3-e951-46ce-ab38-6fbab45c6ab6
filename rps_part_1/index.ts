@@ -10,6 +10,7 @@ const ICON_WIDTH = 100;
 const ICON_TOP = 75;
 const ICON_HEIGHT = 100;
 
+
 function setup() {
     createCanvas(500, 490);
     background("black");
@@ -62,4 +63,8 @@ function mouseMoved() {
         stroke(0)
         rect(300, 100, 100, 100)
     }
+}
+function mouseClicked() {
+    const rps = random(🪨,📃,✂️)
+    
 }

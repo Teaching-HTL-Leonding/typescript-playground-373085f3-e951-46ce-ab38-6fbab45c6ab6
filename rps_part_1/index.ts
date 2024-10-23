@@ -9,7 +9,6 @@ const SCISSORS_LEFT = 300;
 const ICON_WIDTH = 100;
 const ICON_TOP = 75;
 const ICON_HEIGHT = 100;
-const rps = mouseY >= ICON_TOP && mouseY < ICON_TOP + ICON_HEIGHT
 
 
 function setup() {
@@ -27,41 +26,40 @@ function setup() {
     // Display the icons for "stone", "paper", and "scissors".
     textSize(75);
 
-    text("🪨", STONE_LEFT, height - 315);
-    text("📃", PAPER_LEFT, height - 315);
-    text("✂️", SCISSORS_LEFT, height - 315);
+    text("🪨", STONE_LEFT, height - 340);
+    text("📃", PAPER_LEFT, height - 340);
+    text("✂️", SCISSORS_LEFT, height - 340);
 }
 
 function mouseMoved() {
-    if (rps && mouseX >= STONE_LEFT && mouseX < ICON_TOP + ICON_WIDTH) {
-        noFill()
-        strokeWeight(3)
+    const rps = mouseY >= ICON_TOP && mouseY < ICON_TOP + ICON_HEIGHT
+
+    if (rps && mouseX >= STONE_LEFT && mouseX < STONE_LEFT + ICON_WIDTH) {
+         strokeWeight(3)
         stroke("yellow")
-        rect(50, 100, 100, 100)
-    } else if (rps && mouseX <= STONE_LEFT && mouseX > ICON_TOP + ICON_WIDTH){
-        noFill()
-        strokeWeight(3)
-        stroke("white")
-        rect(50, 100, 100, 100)
-    }else if (rps && mouseX >= PAPER_LEFT && mouseX < ICON_TOP + ICON_WIDTH) {
-        noFill()
-        strokeWeight(3)
-        stroke("yellow")
-        rect(175, 100, 100, 100)
-    } else if (rps && mouseX <= PAPER_LEFT && mouseX > ICON_TOP + ICON_WIDTH) {
-        noFill()
+    } else {
         strokeWeight(3)
         stroke(0)
-        rect(175, 100, 100, 100)
-    } else if (rps && mouseX >= SCISSORS_LEFT && mouseX < ICON_TOP + ICON_WIDTH) {
-        noFill()
-        strokeWeight(3)
-        stroke("yellow")
-        rect(300, 100, 100, 100)
-    } else if (rps && mouseX <= SCISSORS_LEFT && mouseX > ICON_TOP + ICON_WIDTH) {
-        noFill()
-        strokeWeight(3)
-        stroke(0)
-        rect(300, 100, 100, 100)
     }
+    noFill()
+        rect(STONE_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
+    if (rps && mouseX >= PAPER_LEFT && mouseX < PAPER_LEFT + ICON_WIDTH) {
+         strokeWeight(3)
+        stroke("yellow")
+    } else {
+         strokeWeight(3)
+        stroke(0)
+    }
+            noFill()
+        rect(PAPER_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
+
+    if (rps && mouseX >= SCISSORS_LEFT && mouseX < SCISSORS_LEFT + ICON_WIDTH) {
+         strokeWeight(3)
+        stroke("yellow")
+    } else {
+         strokeWeight(3)
+        stroke(0)
+    }
+            noFill()
+        rect(SCISSORS_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
 }

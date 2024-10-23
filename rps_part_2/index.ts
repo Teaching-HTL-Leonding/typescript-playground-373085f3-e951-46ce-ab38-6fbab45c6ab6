@@ -64,5 +64,56 @@ function mouseMoved() {
     rect(SCISSORS_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
 }
 
+let selected: string = "";
+let computer: string = "";
+
+
 function mouseClicked() {
+ if (computer === "") {
+        const isInVertical = mouseY >= ICON_TOP && mouseY < ICON_TOP + ICON_HEIGHT;
+        if (isInVertical && mouseX >= STONE_LEFT && mouseX < STONE_LEFT + ICON_WIDTH) {
+            selected = "🪨";
+        }
+
+        if (isInVertical && mouseX >= PAPER_LEFT && mouseX < PAPER_LEFT + ICON_WIDTH) {
+            selected = "📃";
+        }
+
+        if (isInVertical && mouseX >= SCISSORS_LEFT && mouseX < SCISSORS_LEFT + ICON_WIDTH) {
+            selected = "✂️"; 
+        }
+
+        const computerSymbolId = Math.floor(random(0, 3));
+        if (computerSymbolId === 0) {
+            computer = "🪨"; 
+        } else if (computerSymbolId === 1) {
+            computer = "📃"; 
+        } else if (computerSymbolId === 2) {
+            computer = "✂️"; 
+        }
+
+        noStroke();
+        fill("yellow");
+        textSize(30);
+        text("Computer:", TEXT_LEFT, 300);
+        textSize(75);
+        text(computer, 175, 300);
+
+        let winner: string = "";
+        if (selected === computer) {
+            winner = "It's a tie!"; 
+        } else if (
+            (selected === "🪨" && computer === "✂️") || 
+            (selected === "📃" && computer === "🪨") || 
+            (selected === "✂️" && computer === "📃")
+        ) {
+            winner = "You win!";
+        } else {
+            winner = "Computer wins!";
+        }
+
+        textSize(50);
+        fill("yellow");
+        text(winner, TEXT_LEFT, 450);
+    }
 }

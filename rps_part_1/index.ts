@@ -35,31 +35,31 @@ function mouseMoved() {
     const rps = mouseY >= ICON_TOP && mouseY < ICON_TOP + ICON_HEIGHT
 
     if (rps && mouseX >= STONE_LEFT && mouseX < STONE_LEFT + ICON_WIDTH) {
-         strokeWeight(3)
+        strokeWeight(3)
         stroke("yellow")
     } else {
         strokeWeight(3)
         stroke(0)
     }
     noFill()
-        rect(STONE_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
+    rect(STONE_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
     if (rps && mouseX >= PAPER_LEFT && mouseX < PAPER_LEFT + ICON_WIDTH) {
-         strokeWeight(3)
+        strokeWeight(3)
         stroke("yellow")
     } else {
-         strokeWeight(3)
+        strokeWeight(3)
         stroke(0)
     }
-            noFill()
-        rect(PAPER_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
+    noFill()
+    rect(PAPER_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
 
     if (rps && mouseX >= SCISSORS_LEFT && mouseX < SCISSORS_LEFT + ICON_WIDTH) {
-         strokeWeight(3)
+        strokeWeight(3)
         stroke("yellow")
     } else {
-         strokeWeight(3)
+        strokeWeight(3)
         stroke(0)
     }
-            noFill()
-        rect(SCISSORS_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
+    noFill()
+    rect(SCISSORS_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
 }

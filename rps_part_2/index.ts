@@ -32,88 +32,107 @@ function setup() {
 }
 
 function mouseMoved() {
-    const rps = mouseY >= ICON_TOP && mouseY < ICON_TOP + ICON_HEIGHT
+    if (selected === "") {
+        const rps = mouseY >= ICON_TOP && mouseY < ICON_TOP + ICON_HEIGHT
 
-    if (rps && mouseX >= STONE_LEFT && mouseX < STONE_LEFT + ICON_WIDTH) {
-        strokeWeight(3)
-        stroke("yellow")
-    } else {
-        strokeWeight(3)
-        stroke(0)
-    }
-    noFill()
-    rect(STONE_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
-    if (rps && mouseX >= PAPER_LEFT && mouseX < PAPER_LEFT + ICON_WIDTH) {
-        strokeWeight(3)
-        stroke("yellow")
-    } else {
-        strokeWeight(3)
-        stroke(0)
-    }
-    noFill()
-    rect(PAPER_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
+        if (rps && mouseX >= STONE_LEFT && mouseX < STONE_LEFT + ICON_WIDTH) {
+            strokeWeight(3)
+            stroke("yellow")
+        } else {
+            strokeWeight(3)
+            stroke(0)
+        }
+        noFill()
+        rect(STONE_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
+        if (rps && mouseX >= PAPER_LEFT && mouseX < PAPER_LEFT + ICON_WIDTH) {
+            strokeWeight(3)
+            stroke("yellow")
+        } else {
+            strokeWeight(3)
+            stroke(0)
+        }
+        noFill()
+        rect(PAPER_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
 
-    if (rps && mouseX >= SCISSORS_LEFT && mouseX < SCISSORS_LEFT + ICON_WIDTH) {
-        strokeWeight(3)
-        stroke("yellow")
-    } else {
-        strokeWeight(3)
-        stroke(0)
+        if (rps && mouseX >= SCISSORS_LEFT && mouseX < SCISSORS_LEFT + ICON_WIDTH) {
+            strokeWeight(3)
+            stroke("yellow")
+        } else {
+            strokeWeight(3)
+            stroke(0)
+        }
+        noFill()
+        rect(SCISSORS_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
     }
-    noFill()
-    rect(SCISSORS_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
 }
 
 let selected: string = "";
 let computer: string = "";
 
-
 function mouseClicked() {
- if (computer === "") {
-        const isInVertical = mouseY >= ICON_TOP && mouseY < ICON_TOP + ICON_HEIGHT;
-        if (isInVertical && mouseX >= STONE_LEFT && mouseX < STONE_LEFT + ICON_WIDTH) {
-            selected = "🪨";
+    if (computer === "") {
+        const rps = mouseY >= ICON_TOP && mouseY < ICON_TOP + ICON_HEIGHT
+        if (rps && mouseX >= STONE_LEFT && mouseX < STONE_LEFT + ICON_WIDTH) {
+            selected = "🪨"
         }
 
-        if (isInVertical && mouseX >= PAPER_LEFT && mouseX < PAPER_LEFT + ICON_WIDTH) {
-            selected = "📃";
+        if (rps && mouseX >= PAPER_LEFT && mouseX < PAPER_LEFT + ICON_WIDTH) {
+            selected = "📃"
         }
 
-        if (isInVertical && mouseX >= SCISSORS_LEFT && mouseX < SCISSORS_LEFT + ICON_WIDTH) {
-            selected = "✂️"; 
+        if (rps && mouseX >= SCISSORS_LEFT && mouseX < SCISSORS_LEFT + ICON_WIDTH) {
+            selected = "✂️"
         }
 
-        const computerSymbolId = Math.floor(random(0, 3));
-        if (computerSymbolId === 0) {
-            computer = "🪨"; 
-        } else if (computerSymbolId === 1) {
-            computer = "📃"; 
-        } else if (computerSymbolId === 2) {
-            computer = "✂️"; 
+
+        let winner: string = ""
+
+
+        const symbolC = Math.floor(random(1, 3))
+        if (symbolC === 0) {
+            computer = "🪨"
         }
-
-        noStroke();
-        fill("yellow");
-        textSize(30);
-        text("Computer:", TEXT_LEFT, 300);
-        textSize(75);
-        text(computer, 175, 300);
-
-        let winner: string = "";
+        if (symbolC === 1) {
+            computer = "📃"
+        }
+        if (symbolC === 2) {
+            computer = "✂️"
+        }
         if (selected === computer) {
-            winner = "It's a tie!"; 
-        } else if (
-            (selected === "🪨" && computer === "✂️") || 
-            (selected === "📃" && computer === "🪨") || 
-            (selected === "✂️" && computer === "📃")
-        ) {
-            winner = "You win!";
-        } else {
-            winner = "Computer wins!";
+            winner = "It's a tie"
         }
-
-        textSize(50);
-        fill("yellow");
-        text(winner, TEXT_LEFT, 450);
+        if (selected === "🪨" && computer === "✂️") {
+            winner = "You win"
+        }
+        if (selected === "📃" && computer === "🪨") {
+            winner = "You win"
+        }
+        if (selected === "✂️" && computer === "📃") {
+            winner = "You win"
+        }
+        if (selected === "✂️" && computer === "🪨") {
+            winner = "You lose"
+        }
+        if (selected === "🪨" && computer === "📃") {
+            winner = "You lose"
+        }
+        if (selected === "📃" && computer === "✂️") {
+            winner = "You lose"
+        }
+        if (winner === "You win") {
+            fill("yellow")
+            noStroke()
+            text("You win", TEXT_LEFT, 450)
+        }
+        if (winner === "You lose") {
+            fill("yellow")
+            noStroke()
+            text("You lose", TEXT_LEFT, 450)
+        }
+        if (winner === "It's a tie") {
+            fill("yellow")
+            noStroke()
+            text("It's a tie", TEXT_LEFT, 450)
+        }
     }
 }

@@ -134,13 +134,13 @@ function mouseClicked() {
             noStroke()
             text("It's a tie", TEXT_LEFT, 450)
         }
-         if (symbolC === 0) {
+        if (symbolC === 0) {
             text("🪨", 200, 300)
         }
-         if (symbolC === 1) {
+        if (symbolC === 1) {
             text("📃", 200, 300)
         }
-         if (symbolC === 2) {
+        if (symbolC === 2) {
             text("✂️", 200, 300)
         }
     }

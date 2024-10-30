@@ -101,51 +101,52 @@ function draw() {
 function mouseClicked() {
 const num7 = 
 noFill()
-noStroke()
 rect(0, 120, 100, 120)
 
 const num8 = 
 noFill()
-noStroke()
 rect(100, 120, 100, 120)
 
 const num9 = 
 noFill()
-noStroke()
 rect(200, 120, 100, 120)
 
 const num4 = 
 noFill()
-noStroke()
 rect(0, 240, 100, 120)
 
 const num5 = 
 noFill()
-noStroke()
 rect(100, 240, 100, 120)
 
 const num6 = 
 noFill()
-noStroke()
 rect(200, 240, 100, 120)
 
 const num1 = 
 noFill()
-noStroke()
 rect(0, 360, 100, 120)
 
 const num2 = 
 noFill()
-noStroke()
 rect(100, 360, 100, 120)
 
 const num3 = 
 noFill()
-noStroke()
 rect(200, 240, 100, 120)
 
 const num0 = 
 noFill()
-noStroke()
 rect(0, 480, 200, 120)
+
+if(mouseX >= 0 && mouseY >= 480) {
+    fill(0)
+text("0", 490, height - 55 )
+}
+else if(mouseX <= 200 && mouseY <= 600) {
+textSize(80)
+    fill(0)
+    strokeWeight(0)
+    text("0", 80, 560)
+}
 }

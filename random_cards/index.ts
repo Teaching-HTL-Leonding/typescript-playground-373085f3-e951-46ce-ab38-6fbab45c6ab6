@@ -6,9 +6,8 @@ function preload() {
   // Generate random color (0 = clubs, 1 = diamonds, 2 = hearts, 3 = spades)
   const colorIx = Math.floor(random(0, 4));
   switch(colorIx) {
-    if(colorIx === 0) {
-      cardImage = "black"
-    }
+    case 0:
+    const BASE_URL = https://cddataexchange.blob.core.windows.net/images/cards/clubs/cardIx.png.
   }
 
 

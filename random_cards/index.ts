@@ -1,45 +1,98 @@
 let cardImage: p5.Image;
-let cardImage1: p5.Image;
-let cardImage2: p5.Image;
-let cardImage3: p5.Image;
 
 const BASE_URL = 'https://cddataexchange.blob.core.windows.net/images/cards';
 
 function preload() {
   // Generate random color (0 = clubs, 1 = diamonds, 2 = hearts, 3 = spades)
+  let color: string
   const colorIx = Math.floor(random(0, 4));
   switch (colorIx) {
     case 0:
-      let cardImage = 'https://cddataexchange.blob.core.windows.net/images/cards/clubs.png.'
-      break;
+      color = 'clubs'
+      break
 
     case 1:
-      let cardImage1 = 'https://cddataexchange.blob.core.windows.net/images/cards/diamonds.png.'
-      break;
+      color = 'diamonds'
+      break
 
     case 2:
-      let cardImage2 = 'https://cddataexchange.blob.core.windows.net/images/cards/hearts.png.'
-      break;
+      color = 'hearts'
+      break
 
-    case 3:
-      let cardImage3 = 'https://cddataexchange.blob.core.windows.net/images/cards/spades.png.'
-      break;
+    default:
+      color = 'spades'
+      break
   }
 
 
   // Generate random card (1 = Ace, 2 = 2, ..., 10 = 10, 11 = Jack, 12 = Queen, 13 = King)
   const cardIx = Math.floor(random(1, 14));
-
+  let symbol: string
   switch (cardIx) {
     case 0:
+      symbol = 'Ace'
 
+    case 1:
+      symbol = '2'
+      break
+
+    case 2:
+      symbol = '3'
+      break
+
+    case 3:
+      symbol = '4'
+      break
+
+    case 4:
+      symbol = '5'
+      break
+
+    case 5:
+      symbol = '6'
+      break
+
+    case 6:
+      symbol = '7'
+      break
+
+    case 7:
+      symbol = '8'
+      break
+
+    case 8:
+      symbol = '9'
+      break
+
+    case 9:
+      symbol = '10'
+      break
+
+    case 10:
+      symbol = 'Jack'
+      break
+
+    case 11:
+      symbol = 'Queen'
+      break
+
+    case 12:
+      symbol = 'King'
+      break
+
+    default: symbol = `${cardIx}`
+      break
   }
-}
+  symbol = `${symbol}`
 
-function setup() {
-  createCanvas(250, 250);
-  background("darkgreen");
+  const url = `${BASE_URL}/${color}/${symbol}`
+  cardImage = loadImage(url)
 
-  imageMode(CENTER);
-  image(cardImage, width / 2, height / 2);
+  function setup() {
+    createCanvas(250, 250);
+    background("darkgreen");
+
+    imageMode(CENTER);
+    image(cardImage, width / 2, height / 2);
+  }
 }

@@ -83,7 +83,7 @@ function preload() {
     default: symbol = `${cardIx}`
       break
   }
-  symbol = `${symbol}`
+  symbol = `${symbol}.png`
 
   const url = `${BASE_URL}/${color}/${symbol}`
   cardImage = loadImage(url)

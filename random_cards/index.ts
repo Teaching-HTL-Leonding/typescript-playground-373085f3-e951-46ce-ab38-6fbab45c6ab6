@@ -69,24 +69,26 @@ function preload() {
       break
 
     case 10:
-      symbol = 'Jack'
+      symbol = 'J'
       break
 
     case 11:
-      symbol = 'Queen'
+      symbol = 'Q'
       break
 
     case 12:
-      symbol = 'King'
+      symbol = 'K'
       break
 
     default: symbol = `${cardIx}`
       break
+
   }
   symbol = `${symbol}.png`
-
   const url = `${BASE_URL}/${color}/${symbol}`
   cardImage = loadImage(url)
+}
+
 
   function setup() {
     createCanvas(250, 250);
@@ -94,5 +96,4 @@ function preload() {
 
     imageMode(CENTER);
     image(cardImage, width / 2, height / 2);
-  }
 }

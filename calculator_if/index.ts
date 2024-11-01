@@ -1,3 +1,4 @@
+
 const MARGIN_NUM = 10;
 
 let num: number = 0;          // Current number entered by the user
@@ -95,58 +96,42 @@ function draw() {
     strokeWeight(0)
     text("C", 230, 560)
 
+    textSize(70)
+    fill(0)
+    strokeWeight(0)
+    text(num, width - 290, 85)
 }
 
 
 function mouseClicked() {
-const num7 = 
-noFill()
-rect(0, 120, 100, 120)
 
-const num8 = 
-noFill()
-rect(100, 120, 100, 120)
+  if (mouseY > lineHeight && mouseY <= height && mouseX >= 0 && mouseX <= width) {
+    const clickedY = Math.floor((mouseY - lineHeight) / lineHeight);
+    const clickedX = Math.floor(mouseX / cellWidth);
+    
+    let digit: number = -1;
+    if (clickedY === 0) {
+        if (clickedX === 0) { digit = 7; }
+        else if (clickedX === 1) { digit = 8; }
+        else if (clickedX === 2) { digit = 9; }
+    } else if (clickedY === 1) {
+        if (clickedX === 0) { digit = 4; }
+        else if (clickedX === 1) { digit = 5; }
+        else if (clickedX === 2) { digit = 6; }
+    } else if (clickedY === 2) {
+        if (clickedX === 0) { digit = 1; }
+        else if (clickedX === 1) { digit = 2; }
+        else if (clickedX === 2) { digit = 3; }
+    } else if (clickedX !== 2) { digit = 0; }
 
-const num9 = 
-noFill()
-rect(200, 120, 100, 120)
-
-const num4 = 
-noFill()
-rect(0, 240, 100, 120)
-
-const num5 = 
-noFill()
-rect(100, 240, 100, 120)
-
-const num6 = 
-noFill()
-rect(200, 240, 100, 120)
-
-const num1 = 
-noFill()
-rect(0, 360, 100, 120)
-
-const num2 = 
-noFill()
-rect(100, 360, 100, 120)
-
-const num3 = 
-noFill()
-rect(200, 240, 100, 120)
-
-const num0 = 
-noFill()
-rect(0, 480, 200, 120)
-
-if(mouseX >= 0 && mouseY >= 480) {
-    fill(0)
-text("0", 490, height - 55 )
-}
-else if(mouseX <= 200 && mouseY <= 600) {
-textSize(80)
-    fill(0)
-    strokeWeight(0)
-    text("0", 80, 560)
-}
+    if (digit === -1) {
+        num = 0;
+    } else {
+        const currentnum = num;
+        num = num * 10 + digit;
+        if (num >= 10000000) {
+            num = currentnum;
+        }
+    }
+  }
 }

@@ -15,90 +15,36 @@ function draw() {
     fill(0)
     strokeWeight(2)
     line(0, 120, 300, 120)
-
-    fill(0)
-    strokeWeight(2)
     line(0, 240, 300, 240)
-
-    fill(0)
-    strokeWeight(2)
     line(0, 360, 300, 360)
-
-    fill(0)
-    strokeWeight(2)
     line(0, 480, 300, 480)
-
-    fill(0)
-    strokeWeight(2)
     line(100, 120, 100, 480)
-
-    fill(0)
-    strokeWeight(2)
     line(200, 120, 200, 600)
 
     fill("white")
     strokeWeight(2)
     rect(10, 10, 280, 100)
 
-    textSize(80)
+    textSize(60)
     fill(0)
     strokeWeight(0)
-    text("0", 80, 560)
+    text("0", 100, 550)
+    text("1", 50, 430)
+    text("2", 150, 430)
+    text("3", 250, 430)
+    text("4", 50, 310)
+    text("5", 150, 310)
+    text("6", 250, 310)
+    text("7", 50, 190)
+    text("8", 150, 190)
+    text("9", 250, 190)
+    text("C", 250, 550)
 
-    textSize(80)
-    fill(0)
-    strokeWeight(0)
-    text("1", 30, 450)
+  textAlign(RIGHT, CENTER);
+    text(num, width - MARGIN_NUM * 2, lineHeight / 2);
 
-    textSize(80)
-    fill(0)
-    strokeWeight(0)
-    text("2", 130, 450)
+    textAlign(CENTER, CENTER);
 
-    textSize(80)
-    fill(0)
-    strokeWeight(0)
-    text("3", 230, 450)
-
-    textSize(80)
-    fill(0)
-    strokeWeight(0)
-    text("4", 30, 330)
-
-    textSize(80)
-    fill(0)
-    strokeWeight(0)
-    text("5", 130, 330)
-
-    textSize(80)
-    fill(0)
-    strokeWeight(0)
-    text("6", 230, 330)
-
-    textSize(80)
-    fill(0)
-    strokeWeight(0)
-    text("7", 30, 210)
-
-    textSize(80)
-    fill(0)
-    strokeWeight(0)
-    text("8", 130, 210)
-
-    textSize(80)
-    fill(0)
-    strokeWeight(0)
-    text("9", 230, 210)
-
-    textSize(80)
-    fill(0)
-    strokeWeight(0)
-    text("C", 230, 560)
-
-    textSize(70)
-    fill(0)
-    strokeWeight(0)
-    text(num, width - 60, 85)
 }
 
 function mouseClicked() {
@@ -106,25 +52,25 @@ function mouseClicked() {
         let clickY = Math.floor((mouseY - lineHeight) / lineHeight)
         let clickX = Math.floor(mouseX / cellWidth)
 
-        let digit = -1
+        let digit: number = -1
         if (clickY === 0) {
-            if (clickX === 0) { digit === 7 }
-            else if (clickX === 1) { digit === 8 }
-            else if (clickX === 2) { digit === 9 }
+            if (clickX === 0) { digit = 7 }
+            else if (clickX === 1) { digit = 8 }
+            else if (clickX === 2) { digit = 9 }
         } else if (clickY === 1) {
-            if (clickX === 0) { digit === 4 }
-            else if (clickX === 1) { digit === 5 }
-            else if (clickX === 2) { digit === 6 }
+            if (clickX === 0) { digit = 4 }
+            else if (clickX === 1) { digit = 5 }
+            else if (clickX === 2) { digit = 6 }
         } else if (clickY === 2) {
-            if (clickX === 0) { digit === 1 }
-            else if (clickX === 1) { digit === 2 }
-            else if (clickX === 2) { digit === 3 }
-        } else if (clickX !== 2) { digit === 0 }
+            if (clickX === 0) { digit = 1 }
+            else if (clickX === 1) { digit = 2 }
+            else if (clickX === 2) { digit = 3 }
+        } else if (clickX !== 2) { digit = 0 }
 
         if (digit === -1) { num = 0 } else {
             const currentnum = num
             num = num * 10 + digit
-            if (num >= 10000000) {
+            if (num >= 100000000) {
                 num = currentnum
             }
         }

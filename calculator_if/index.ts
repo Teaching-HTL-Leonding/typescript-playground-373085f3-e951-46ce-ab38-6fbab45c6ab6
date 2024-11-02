@@ -1,4 +1,3 @@
-
 const MARGIN_NUM = 10;
 
 let num: number = 0;          // Current number entered by the user
@@ -99,39 +98,35 @@ function draw() {
     textSize(70)
     fill(0)
     strokeWeight(0)
-    text(num, width - 290, 85)
+    text(num, width - 60, 85)
 }
 
-
 function mouseClicked() {
+    if (mouseY > lineHeight && mouseY <= height && mouseX >= 0 && mouseX <= width) {
+        let clickY = Math.floor((mouseY - lineHeight) / lineHeight)
+        let clickX = Math.floor(mouseX / cellWidth)
 
-  if (mouseY > lineHeight && mouseY <= height && mouseX >= 0 && mouseX <= width) {
-    const clickedY = Math.floor((mouseY - lineHeight) / lineHeight);
-    const clickedX = Math.floor(mouseX / cellWidth);
-    
-    let digit: number = -1;
-    if (clickedY === 0) {
-        if (clickedX === 0) { digit = 7; }
-        else if (clickedX === 1) { digit = 8; }
-        else if (clickedX === 2) { digit = 9; }
-    } else if (clickedY === 1) {
-        if (clickedX === 0) { digit = 4; }
-        else if (clickedX === 1) { digit = 5; }
-        else if (clickedX === 2) { digit = 6; }
-    } else if (clickedY === 2) {
-        if (clickedX === 0) { digit = 1; }
-        else if (clickedX === 1) { digit = 2; }
-        else if (clickedX === 2) { digit = 3; }
-    } else if (clickedX !== 2) { digit = 0; }
+        let digit = -1
+        if (clickY === 0) {
+            if (clickX === 0) { digit === 7 }
+            else if (clickX === 1) { digit === 8 }
+            else if (clickX === 2) { digit === 9 }
+        } else if (clickY === 1) {
+            if (clickX === 0) { digit === 4 }
+            else if (clickX === 1) { digit === 5 }
+            else if (clickX === 2) { digit === 6 }
+        } else if (clickY === 2) {
+            if (clickX === 0) { digit === 1 }
+            else if (clickX === 1) { digit === 2 }
+            else if (clickX === 2) { digit === 3 }
+        } else if (clickX !== 2) { digit === 0 }
 
-    if (digit === -1) {
-        num = 0;
-    } else {
-        const currentnum = num;
-        num = num * 10 + digit;
-        if (num >= 10000000) {
-            num = currentnum;
+        if (digit === -1) { num = 0 } else {
+            const currentnum = num
+            num = num * 10 + digit
+            if (num >= 10000000) {
+                num = currentnum
+            }
         }
     }
-  }
 }

@@ -1,8 +1,8 @@
-let num = 0;
 let num1 = 0
 let num2 = 0
 let num3 = 0
 let num4 = 0
+let num = 0;
 
 function setup() {
   num = Math.floor(random(0, 16));
@@ -35,14 +35,20 @@ function setup() {
 
 function mouseClicked() {
 if(mouseX > 30 && mouseX <= 100 && mouseY > 100 && mouseY <= 200) {
-  if(mum4 === 1){
+  if(num4 === 1){
     num4 = 0
   }else{ num4 = 1}
 }if(mouseX > 120 && mouseX <= 190 && mouseY > 100 && mouseY <= 200) {
-  let mum3 = 1
+    if(num3 === 1){
+    num3 = 0
+  }else{ num3 = 1}
 }if(mouseX > 210 && mouseX <= 280 && mouseY > 100 && mouseY <= 200) {
-  let mum2 = 1
+    if(num2 === 1){
+    num2 = 0
+  }else{ num2 = 1}
 }if(mouseX > 300 && mouseX <= 370 && mouseY > 100 && mouseY <= 200) {
-  let mum1 = 1
+    if(num1 === 1){
+    num1 = 0
+  }else{ num1 = 1}
 }
 }

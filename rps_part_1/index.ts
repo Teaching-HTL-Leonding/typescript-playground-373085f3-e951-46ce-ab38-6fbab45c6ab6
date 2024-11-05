@@ -28,8 +28,39 @@ function setup() {
 
 function mouseMoved() {
     const rps = mouseY > ICON_TOP && mouseY <= ICON_TOP + ICON_HEIGHT
-   if(rps && mouseX > STONE_LEFT && mouseX < STONE_LEFT + ICON_WIDTH) {
-    noFill()
-    rect(STONE_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT)
-   }
+    if (rps && mouseX > STONE_LEFT && mouseX < STONE_LEFT + ICON_WIDTH) {
+        noFill()
+        stroke("yellow")
+        strokeWeight(2)
+        rect(STONE_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT)
+    } else {
+        noFill()
+        stroke(0)
+        strokeWeight(2)
+        rect(STONE_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT)
+    }
+
+    if (rps && mouseX > PAPER_LEFT && mouseX < PAPER_LEFT + ICON_WIDTH) {
+        noFill()
+        stroke("yellow")
+        strokeWeight(2)
+        rect(PAPER_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT)
+    } else {
+        noFill()
+        stroke(0)
+        strokeWeight(2)
+        rect(PAPER_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT)
+    }
+
+    if (rps && mouseX > SCISSORS_LEFT && mouseX < SCISSORS_LEFT + ICON_WIDTH) {
+        noFill()
+        stroke("yellow")
+        strokeWeight(2)
+        rect(SCISSORS_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT)
+    } else {
+        noFill()
+        stroke(0)
+        strokeWeight(2)
+        rect(SCISSORS_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT)
+    }
 }

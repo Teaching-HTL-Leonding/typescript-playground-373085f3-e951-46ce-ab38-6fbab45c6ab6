@@ -23,8 +23,6 @@ function setup() {
   text(Math.floor(num / 10000) % 10, 170, 120)
   text(Math.floor(num / 100000) % 10, 70, 120)
 
-
-
   textAlign(CENTER, CENTER);
   fill("yellow");
   noStroke();

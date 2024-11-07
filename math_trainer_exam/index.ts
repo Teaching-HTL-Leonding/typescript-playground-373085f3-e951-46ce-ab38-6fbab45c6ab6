@@ -45,6 +45,8 @@ function setup() {
     } else if (zeichen === "+") {
         result = num1 + num2
     } else if (zeichen === "*") {
+      num1 = Math.floor(random(1,11))
+      num2 = Math.floor(random(1,11))
         result = num1 * num2
     }
 
@@ -64,7 +66,7 @@ function setup() {
     textAlign(LEFT, CENTER)
     text(num2, width / 2 + 50, height / 5)
     text(zeichen, 250, height / 5)
-    text(num3, 10, height / 2)
+    text(num3, 20, height / 2)
     text(num4, 170, height / 2)
     text(num5, 350, height / 2)
 
@@ -75,11 +77,11 @@ function setup() {
 function mouseClicked() {
     if (selected === 0) {
         const mouseYnum = mouseY > 171 && mouseY <= 217
-        if (mouseX > 10 && mouseX <= 70 && mouseYnum) {
+        if (mouseX > 20 && mouseX <= 121 && mouseYnum) {
             selected = num3
-        } else if (mouseX > 170 && mouseX <= 230 && mouseYnum) {
+        } else if (mouseX > 170 && mouseX <= 265 && mouseYnum) {
             selected = num4
-        } else if (mouseX > 350 && mouseX <= 410 && mouseYnum) {
+        } else if (mouseX > 350 && mouseX <= 450 && mouseYnum) {
             selected = num5
         }
     }

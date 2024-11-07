@@ -39,9 +39,6 @@ function setup() {
 
     if (zeichen === "-") {
         result = num1 - num2
-        if(num1 < num2){
-           result = num2 - num1
-        }else{result = num1 - num2}
     } else if (zeichen === "+") {
         result = num1 + num2
     } else if (zeichen === "*") {

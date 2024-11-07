@@ -22,7 +22,7 @@ function setup() {
     num5 = Math.floor(random(1, 101))
 
 
-    createCanvas(400, 400);
+    createCanvas(500, 400);
     background("black");
     switch (Math.floor(random(0, 3))) {
         case 0:
@@ -63,10 +63,10 @@ function setup() {
 
     textAlign(LEFT, CENTER)
     text(num2, width / 2 + 50, height / 5)
-    text(zeichen, 180, height / 5)
-    text(num3, 30, height / 2)
-    text(num4, 140, height / 2)
-    text(num5, 270, height / 2)
+    text(zeichen, 250, height / 5)
+    text(num3, 10, height / 2)
+    text(num4, 170, height / 2)
+    text(num5, 350, height / 2)
 
 
 }
@@ -75,11 +75,11 @@ function setup() {
 function mouseClicked() {
     if (selected === 0) {
         const mouseYnum = mouseY > 171 && mouseY <= 217
-        if (mouseX > 30 && mouseX <= 90 && mouseYnum) {
+        if (mouseX > 10 && mouseX <= 70 && mouseYnum) {
             selected = num3
-        } else if (mouseX > 140 && mouseX <= 200 && mouseYnum) {
+        } else if (mouseX > 170 && mouseX <= 230 && mouseYnum) {
             selected = num4
-        } else if (mouseX > 270 && mouseX <= 330 && mouseYnum) {
+        } else if (mouseX > 350 && mouseX <= 410 && mouseYnum) {
             selected = num5
         }
     }

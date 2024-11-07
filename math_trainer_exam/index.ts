@@ -10,11 +10,8 @@ let num4 = 0
 let num5 = 0
 let zeichen = ""
 let result = 0
-let seleced = ""
+let selected = 0
 let position = 0
-let positionX1 = 0
-let positionX2 = 0
-let positionX3 = 0
 // setup function runs once and sets up the quiz elements on the canvas
 function setup() {
     num = Math.floor(random(1, 101))
@@ -22,6 +19,7 @@ function setup() {
     num2 = Math.floor(random(1, 101))
     num3 = Math.floor(random(1, 101))
     num4 = Math.floor(random(1, 101))
+    num5 = Math.floor(random(1, 101))
 
 
     createCanvas(400, 400);
@@ -41,32 +39,22 @@ function setup() {
 
     if (zeichen === "-") {
         result = num1 - num2
+        if(num1 < num2){
+           result = num2 - num1
+        }else{result = num1 - num2}
     } else if (zeichen === "+") {
         result = num1 + num2
     } else if (zeichen === "*") {
         result = num1 * num2
     }
-     position = Math.floor(random(1, 4))
-    if(position === 1){
-      positionX1 = 30
-    } else if(position === 2){
-        positionX1 = 150
-    } else if(position === 3){
-        positionX1 = 260
-    }
-        if(positionX1 === 30){
-      positionX2 = 150
-    } else if(positionX1 === 150){
-        positionX2 = 260
-    } else if(positionX1 === 3){
-        positionX2 = 30
-    }
-        if(positionX1 === 30 && positionX2 === 150){
-      positionX3 = 260
-    } else if(positionX1 === 30 && positionX2 === 150){
-        positionX3 = 150
-    } else if(position === 3){
-        positionX3 = 260
+
+    position = Math.floor(random(1, 4))
+    if (position === 1) {
+        num3 = result
+    } else if (position === 2) {
+        num4 = result
+    } else if (position === 3) {
+        num5 = result
     }
     textAlign(RIGHT, CENTER)
     textSize(60)
@@ -76,17 +64,33 @@ function setup() {
     textAlign(LEFT, CENTER)
     text(num2, width / 2 + 50, height / 5)
     text(zeichen, 180, height / 5)
-    text(result, positionX1, height / 2)
-    text(num3, positionX2, height / 2)
-    text(num4, positionX3, height / 2)
+    text(num3, 30, height / 2)
+    text(num4, 140, height / 2)
+    text(num5, 270, height / 2)
+
 
 }
 
 // mouseClicked function checks if the user clicked on the correct answer
 function mouseClicked() {
-    const mouseYnum = mouseY > 171 && mouseY <= 217
-    if (mouseX > 30 && mouseX <= 90 && mouseYnum) {
-    
+    if (selected === 0) {
+        const mouseYnum = mouseY > 171 && mouseY <= 217
+        if (mouseX > 30 && mouseX <= 90 && mouseYnum) {
+            selected = num3
+        } else if (mouseX > 140 && mouseX <= 200 && mouseYnum) {
+            selected = num4
+        } else if (mouseX > 270 && mouseX <= 330 && mouseYnum) {
+            selected = num5
+        }
+    }
+    if (selected === result) {
+        fill("yellow")
+        textSize(50)
+        text(`${result} correct`, 10, 360)
+    } else if (selected !== result) {
+        fill("yellow")
+        textSize(50)
+        text(`${selected} is not correct`, 10, 360)
     }
 }
 

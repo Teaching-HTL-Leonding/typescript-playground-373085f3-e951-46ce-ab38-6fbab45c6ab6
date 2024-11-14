@@ -25,7 +25,7 @@ function setup() {
     strokeWeight(2);
 
     // Draw left part of the lines
-    stroke("yellow");
+    stroke("red");
     let x = GRID
     while(x < SIZE){
         line(400, x, x, x)
@@ -34,7 +34,7 @@ function setup() {
     // <<< Write your code here
 
     // Draw right part of the lines
-    stroke("red");
+    stroke("yellow");
     x = GRID
     while(x < SIZE){
         line(0, x, x, x)

@@ -10,10 +10,10 @@ function setup() {
 let xy = 0
 while(xy <= SIZE){
     fill("yellow")
-    rect(xy,xy, SIZE, xy)
-    xy += STRIPE_THICKNESS
+    rect(0 ,xy, SIZE, STRIPE_THICKNESS)
     fill("lime")
-    rect(xy, xy * 2, SIZE, xy)
+    rect(0, xy * 2, SIZE, STRIPE_THICKNESS)
 
+    xy += STRIPE_THICKNESS
 }
 }

@@ -12,7 +12,6 @@ while(xy < 400){
     fill("yellow")
     rect(xy, xy, 25,25)
     xy+= GRID
-
 }
 xy = GRID
 while(xy < 400){

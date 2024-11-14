@@ -8,13 +8,13 @@ function setup() {
     noStroke();
 
 let xy = GRID
-while(xy <= 375){
-    rect(xy, xy, 30,30)
+while(xy < 400){
+    fill("yellow")
+    rect(xy, xy, 25,25)
+
+    fill("lime")
+    rect(xy, height - GRID - xy, 25, 25)
     xy+= GRID
-}
-xy = GRID
-while(xy <= GRID){
-    rect(xy, 375, 30,30)
-    xy-= GRID
+
 }
 }

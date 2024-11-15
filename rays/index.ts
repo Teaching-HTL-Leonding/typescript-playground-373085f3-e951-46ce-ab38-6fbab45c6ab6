@@ -11,28 +11,21 @@ function mouseMoved() {
   background("black");
   strokeWeight(2);
 
-let y = MARGIN
-while(y <= 375){
+
+for(let y = MARGIN; y <= 375; y+= MARGIN){
   stroke("yellow")
  line(MARGIN, y, mouseX, mouseY)
- y += MARGIN
 }
-y = MARGIN
-while(y <= 375){
+for(let y = MARGIN; y <= 375; y+= MARGIN){
   stroke("yellow")
  line(375, y, mouseX, mouseY)
- y += MARGIN
 }
-let x = MARGIN
-while(x <= 375){
+for(let x = MARGIN; x <= 375; x += MARGIN){
   stroke("lightgreen")
  line(x, 375, mouseX, mouseY)
- x += MARGIN
 }
-x = MARGIN
-while(x <= 375){
+for(let x = MARGIN; x <= 375; x += MARGIN){
   stroke("lightgreen")
  line(x, MARGIN, mouseX, mouseY)
- x += MARGIN
 }
 }

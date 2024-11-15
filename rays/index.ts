@@ -11,23 +11,17 @@ function mouseMoved() {
   background("black");
   strokeWeight(2);
 
-  for (let y = MARGIN; y <= 375; y += MARGIN) {
+  for (let xy = MARGIN; xy <= 375; xy += MARGIN) {
     stroke("yellow")
-    line(MARGIN, y, mouseX, mouseY)
-  }
+    line(MARGIN, xy, mouseX, mouseY)
 
-  for (let y = MARGIN; y <= 375; y += MARGIN) {
     stroke("yellow")
-    line(375, y, mouseX, mouseY)
-  }
+    line(375, xy, mouseX, mouseY)
 
-  for (let x = MARGIN; x <= 375; x += MARGIN) {
     stroke("lightgreen")
-    line(x, 375, mouseX, mouseY)
-  }
+    line(xy, 375, mouseX, mouseY)
 
-  for (let x = MARGIN; x <= 375; x += MARGIN) {
     stroke("lightgreen")
-    line(x, MARGIN, mouseX, mouseY)
+    line(xy, MARGIN, mouseX, mouseY)
   }
 }

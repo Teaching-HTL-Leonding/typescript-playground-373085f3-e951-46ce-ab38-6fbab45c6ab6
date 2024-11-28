@@ -14,8 +14,10 @@ function setup() {
     noFill();
     for(let x = 0; x <= SIZE; x += SIDE_LENGTH){
     triangle(x, SIDE_LENGTH, SIDE_LENGTH / 2 + x, 0, x + SIDE_LENGTH, SIDE_LENGTH)
-    for(let y = SIDE_LENGTH; x <= HEIGHT * 9; y += SIDE_LENGTH){
-    triangle(x, y + y, SIDE_LENGTH / 2 + x, y, x + SIDE_LENGTH, y)
+    if(x <= 400){
+        for(let x = 0; x <= SIZE; x += SIDE_LENGTH){
+            triangle(x, SIDE_LENGTH + SIDE_LENGTH, SIDE_LENGTH * 2 / 2 + x, 0, x + SIDE_LENGTH, SIDE_LENGTH + SIDE_LENGTH)
+        }
     }
     }
 

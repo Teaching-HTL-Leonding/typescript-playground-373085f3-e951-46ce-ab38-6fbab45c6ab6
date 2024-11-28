@@ -14,9 +14,7 @@ function setup() {
     noFill();
     for(let y = HEIGHT; y <= HEIGHT * 9; y += HEIGHT){
     for (let x = 0; x <= SIZE; x += SIDE_LENGTH) {
-        triangle(x, HEIGHT, SIDE_LENGTH / 2 + x, 0, x + SIDE_LENGTH, HEIGHT)
-    
+        triangle(x, y, SIDE_LENGTH / 2 + x, y - 50, x + SIDE_LENGTH, y)
     }
     }
 }
-

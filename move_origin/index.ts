@@ -45,7 +45,7 @@ function setup() {
   //resetMatrix();
   //circle(0, 0, CIRCLE_DIAMETER);
 
-  for(let i = CIRCLE_DIAMETER; i >= SIZE; i += CIRCLE_DIAMETER){
+  for (let i = CIRCLE_DIAMETER; i <= SIZE; i += CIRCLE_DIAMETER) {
     translate(i, i)
     circle(0, 0, CIRCLE_DIAMETER)
   }

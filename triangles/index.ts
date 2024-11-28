@@ -16,7 +16,7 @@ function setup() {
     triangle(x, SIDE_LENGTH, SIDE_LENGTH / 2 + x, 0, x + SIDE_LENGTH, SIDE_LENGTH)
     if(x <= 400){
         for(let x = 0; x <= SIZE; x += SIDE_LENGTH){
-            triangle(x, SIDE_LENGTH + SIDE_LENGTH, SIDE_LENGTH * 2 / 2 + x, 0, x + SIDE_LENGTH, SIDE_LENGTH + SIDE_LENGTH)
+            triangle(x, SIDE_LENGTH + SIDE_LENGTH, SIDE_LENGTH * 2 / 2 + x, 0 + SIDE_LENGTH, x + SIDE_LENGTH, SIDE_LENGTH + SIDE_LENGTH)
         }
     }
     }

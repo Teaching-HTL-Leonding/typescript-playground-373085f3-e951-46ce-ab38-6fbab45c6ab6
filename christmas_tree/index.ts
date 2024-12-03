@@ -36,6 +36,10 @@ function setup() {
         circle(-100 / 2, 15, 30);
         circle(50, 15, 30);
       }
+      if (i < 3) {
+        translate(0, 50);
+        100 * 1.5;
+      }
     }
   }
 }

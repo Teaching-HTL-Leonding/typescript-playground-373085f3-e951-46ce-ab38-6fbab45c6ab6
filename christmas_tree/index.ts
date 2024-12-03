@@ -25,7 +25,8 @@ const TRUNK_HEIGHT = 50;
   fill("brown")
   rect(width / 2 - 25, 350, TRUNK_WIDTH, TRUNK_HEIGHT)
 
-for(let i = TOP_MARGIN; i <= 350; i+= TOP_MARGIN){
-  translate(0,)
+for(let i = 50; i <= 350; i+= 50){
+  translate(250,i)
+  triangle(i - 50, i, i, i - 50, i + 50, i)
 }
 }

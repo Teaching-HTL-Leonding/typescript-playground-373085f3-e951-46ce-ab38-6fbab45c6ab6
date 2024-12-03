@@ -28,11 +28,14 @@ function setup() {
   for (let p = 0; p < 2; p++) {
     resetMatrix();
     translate(width / 2, TOP_MARGIN + 50);
-    for (let i = 0; i <= 3; i++) {
-      if(p === 0){
+    for (let i = 0; i <= 4; i++) {
+      if (p === 0) {
         triangle(-100 / 2, 0, 0, -50, 50, 0)
+      } else {
+        fill(Math.floor(random(0, 255)), Math.floor(random(0, 255)), Math.floor(random(0, 255)));
+        circle(-100 / 2, 15, 30);
+        circle(50, 15, 30);
       }
     }
   }
-
 }

@@ -25,8 +25,14 @@ function setup() {
   fill("brown")
   rect(width / 2 - 25, 350, TRUNK_WIDTH, TRUNK_HEIGHT)
 
-  for (let i = 50; i <= 350; i += 50) {
-    translate(0, i)
-    triangle(i + 150, 50, i + 200, 50, i + 250, 50)
+  for (let p = 0; p < 2; p++) {
+    resetMatrix();
+    translate(width / 2, TOP_MARGIN + 50);
+    for (let i = 0; i <= 3; i++) {
+      if(p === 0){
+        triangle(-100 / 2, 0, 0, -50, 50, 0)
+      }
+    }
   }
+
 }

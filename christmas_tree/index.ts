@@ -30,6 +30,7 @@ function setup() {
     translate(width / 2, TOP_MARGIN + 50);
     for (let i = 0; i <= 4; i++) {
       if (p === 0) {
+        fill("green")
         triangle(-100 / 2, 0, 0, -50, 50, 0)
       } else {
         fill(Math.floor(random(0, 255)), Math.floor(random(0, 255)), Math.floor(random(0, 255)));
@@ -38,7 +39,7 @@ function setup() {
       }
       if (i < 3) {
         translate(0, 50);
-        100 * 1.5;
+        100 * 0.5;
       }
     }
   }

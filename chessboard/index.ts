@@ -7,8 +7,9 @@ function setup() {
 
     noStroke();
 
-    let brown1 = 0
-    while(brown1 <= SIZE){
-        rect(brown1, )
+    for(let y = SQUARE_SIZE; y <= SIZE; y+= SQUARE_SIZE){
+        for(let x = SQUARE_SIZE; x <= SIZE; x+= SQUARE_SIZE){
+            rect(x,y,SQUARE_SIZE,SQUARE_SIZE)
+        }
     }
 }

@@ -18,19 +18,23 @@ function mouseMoved() {
 
     noFill();
     stroke("aqua");
-
+    let num = 0
     for (let x = 0; x < 601; x += 10) {
-        for (let i = 0; i <= 301; i += 5) {
-            if(x >= 360){
-                x === 0
-            }
-            stroke(x + 60, x + 60, x)
-            line(x, 0, x + 10, 5 + i)
+        for (let i = 0; i <= 301; i += 10) {
+            stroke(x, x + 360,60 + x)
+            line(x, i, x + 10, 5 + i)
             line(x + 10, 5 + i, x, i + 10)
+            if (mouseY >= i && mouseX >= x) {
+                num += 1
+            }
         }
     }
-
-noStroke()
+    noStroke()
     fill(0)
     rect(0, 280, 601, 21)
+
+    textAlign(LEFT, CENTER)
+    textSize(10)
+    fill("white")
+    text(`${num} of 601`, 0, 290)
 }

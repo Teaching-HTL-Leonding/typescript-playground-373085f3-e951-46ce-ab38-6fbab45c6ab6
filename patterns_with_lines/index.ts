@@ -17,8 +17,9 @@ function mouseMoved() {
 
     noFill();
     stroke("aqua");
-
+    for(let x = 0; )
     for(let i = 0; i <= 250; i += 10){
-        line(i, i, )
+        line(0, 0 + i, 5, 5 + i)
+        line(5 , 5 + i, 0, 10 + i)
     }
 }

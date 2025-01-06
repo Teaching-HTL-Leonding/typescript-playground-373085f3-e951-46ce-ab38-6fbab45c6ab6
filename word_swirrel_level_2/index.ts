@@ -19,7 +19,7 @@ function setup() {
     wordToScramble = wordToScramble.substring(0,letterIndex)
      + wordToScramble.substring(letterIndex + 1)
 }
-for(let final = scrambleWord; final.length >= scrambleWord.length; final += 1){
+for(let final = 0; final >= 4; final += 1){
     textAlign(CENTER,CENTER)
   fill("white")
   textSize(75)

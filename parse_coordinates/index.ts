@@ -14,12 +14,12 @@ function setup() {
         switch (circles[ix]) {
             case ",":
                 x = parseInt(co)
-                co = ""
+                co = " "
                 break;
-            case "":
+            case " ":
                 y = parseInt(co)
                 circle(x, y, 40)
-                co = ""
+                co = " "
                 break;
             default:
                 co += circles[ix]

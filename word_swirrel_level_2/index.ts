@@ -18,11 +18,13 @@ for(let i = 0; i < wordToGuess.length; i ++){
   let tc = random (0, 360)
   let c = random (50, 200)
 
+push()
 translate(x,y)
 fill(tc, 100, 100)
 rotate(a)
 textSize(c)
 text(wordToGuess[i], 0, 0)
+pop()
 }
 }
 

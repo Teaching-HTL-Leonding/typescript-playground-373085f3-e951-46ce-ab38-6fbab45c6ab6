@@ -11,21 +11,19 @@ function setup() {
   colorMode(HSB);
   angleMode(DEGREES);
 
-  let wordToScramble = wordToGuess;
-  let scrambleWord = "";
-  while(wordToScramble.length > 0){
-    let letterIndex = Math.floor(random(wordToScramble.length));
-    scrambleWord += wordToScramble[letterIndex];
-    wordToScramble = wordToScramble.substring(0,letterIndex)
-     + wordToScramble.substring(letterIndex + 1)
-}
-for(let final = 0; final >= 4; final += 1){
-    textAlign(CENTER,CENTER)
-  fill("white")
-  textSize(75)
-  text(scrambleWord[final], Math.floor(random(0, WIDTH)), Math.floor(random(0, HEIGHT)))
-}
+for(let i = 0; i < wordToGuess.length; i ++){
+  let x = random (50, 450)
+  let y = random (50, 250)
+  let a = random (-90, 90)
+  let tc = random (0, 360)
+  let c = random (50, 200)
 
+translate(x,y)
+fill(tc, 100, 100)
+rotate(a)
+textSize(c)
+text(wordToGuess[i], 0, 0)
+}
 }
 
 function guess(textInput: string) {

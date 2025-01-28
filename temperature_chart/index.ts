@@ -29,7 +29,7 @@ function drawYLabels() {
   for(let i = 30; i <= 320; i += 30){
 stroke(0)
 strokeWeight(3)
-line(10, i, 30, i)
+line(15, i, 25, i)
   }
 }
 
@@ -37,9 +37,12 @@ function drawXLabels() {
   for(let a = 20; a <= 400; a += 30){
 stroke(0)
 strokeWeight(3)
-line(a, 260, a, 280)
+line(a, 265, a, 275)
   }}
 
 function drawTemperatures(temperatures: number[]) {
-  // <<< Add code to draw the temperatures here
+  for(let b = 0; b < 400; b += 400 / 12){
+    rect(b, 270, 20, temperatures[b])
+  }
+  
 }

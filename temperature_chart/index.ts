@@ -11,8 +11,8 @@ function setup() {
   drawAxes()
   drawYLabels()
   drawXLabels()
-  for(let y = 0; y < AVG_TEMP_LINZ.length; y ++){
-    drawTemperatures([AVG_TEMP_LINZ[y]])
+  for(let y = 0; y < AVG_TEMP_JOHANNESBURG.length; y ++){
+    drawTemperatures([AVG_TEMP_JOHANNESBURG[y]])
   }
   
   // <<< Call the functions in the following order:
@@ -49,6 +49,6 @@ function drawTemperatures(temperatures: number[]) {
   for (let b = 20; b < 380; b += 30) {
     fill("yellow")
     noStroke()
-    rect(b + 5, 270, 20, temperatures[])
+    rect(b + 5, 270, 20, -temperatures.length *100)
  }
 }

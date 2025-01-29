@@ -1,3 +1,5 @@
+translate(20, 0)
+
 const AVG_TEMP_LINZ: number[] = [
   -0.7, 0.5, 4.7, 9.9, 14.2, 17.9, 19.5, 19.3, 14.7, 10, 4.8, 0.6,
 ];
@@ -27,16 +29,55 @@ function drawAxes() {
 }
 
 function drawYLabels() {
-  for (let i = 30; i <= 320; i += 30) {
+  for (let x = 30; x <= 320; x += 30) {
     stroke(0)
     strokeWeight(3)
-    line(15, i, 25, i)
-    for (let num = 35; num <= -5; num -= 5) {
-      textSize(30)
-      fill(0)
-      text(num, 10, i)
+    line(15, x, 25, x)
+    for (let i = 1; i <= 12; i++) {
+      let month = ""
+      switch (i) {
+        case 0:
+          month = "Jan"
+          break;
+        case 1:
+          month = "Feb"
+          break;
+        case 2:
+          month = "Mar"
+          break;
+        case 3:
+          month = "Apr"
+          break;
+        case 4:
+          month = "May"
+          break;
+        case 5:
+          month = "Jun"
+          break;
+        case 6:
+          month = "Jul"
+          break;
+        case 7:
+          month = "Aug"
+          break;
+        case 8:
+          month = "Sep"
+          break;
+        case 9:
+          month = "Oct"
+          break;
+        case 10:
+          month = "Nov"
+          break;
+        case 11:
+          month = "Dec"
+          break;
+      }
+      noStroke()
+      text(month, 5, x)
     }
   }
+
 }
 
 function drawXLabels() {

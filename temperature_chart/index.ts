@@ -11,10 +11,7 @@ function setup() {
   drawAxes()
   drawYLabels()
   drawXLabels()
-  for (let y = 0; y <= AVG_TEMP_JOHANNESBURG.length; y++) {
-    drawTemperatures([AVG_TEMP_JOHANNESBURG[y]])
-  }
-
+  drawTemperatures(AVG_TEMP_JOHANNESBURG)
   // <<< Call the functions in the following order:
   // 1. Draw temperatures (gets AVG_TEMP_LINZ or AVG_TEMP_JOHANNESBURG as parameter)
   // 2. Draw axes
@@ -34,7 +31,7 @@ function drawYLabels() {
     stroke(0)
     strokeWeight(3)
     line(15, i, 25, i)
-    for(let num = 35; num <= -5; num -= 5){
+    for (let num = 35; num <= -5; num -= 5) {
       textSize(30)
       fill(0)
       text(num, 10, i)
@@ -50,12 +47,12 @@ function drawXLabels() {
   }
 }
 
-function drawTemperatures(temperatures: number[] = []) {
+function drawTemperatures(temperatures: number[]) {
   for (let b = 20; b < 380; b += 30) {
     fill("yellow")
     noStroke()
     for (let x = 0; x < AVG_TEMP_JOHANNESBURG.length; x++) {
-      rect(b + 5, 270, 20, -temperatures[x])
+      rect(b + 5, 270, 20, -temperatures[x] * 5)
     }
   }
 }

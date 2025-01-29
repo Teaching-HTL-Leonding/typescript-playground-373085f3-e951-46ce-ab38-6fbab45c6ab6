@@ -34,8 +34,10 @@ function drawYLabels() {
     stroke(0)
     strokeWeight(3)
     line(15, i, 25, i)
-    for(let num = 35; num <= -5; num - 5){
-      text(num, 15, i)
+    for(let num = 35; num <= -5; num -= 5){
+      textSize(30)
+      fill(0)
+      text(num, 10, i)
     }
   }
 }
@@ -48,7 +50,7 @@ function drawXLabels() {
   }
 }
 
-function drawTemperatures(temperatures: number[]) {
+function drawTemperatures(temperatures: number[] = []) {
   for (let b = 20; b < 380; b += 30) {
     fill("yellow")
     noStroke()

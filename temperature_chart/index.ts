@@ -49,6 +49,6 @@ function drawTemperatures(temperatures: number[]) {
   for (let b = 20; b < 380; b += 30) {
     fill("yellow")
     noStroke()
-    rect(b + 5, 270, 20, -temperatures.length *100)
+    rect(b + 5, 270, 20, -temperatures)
  }
 }

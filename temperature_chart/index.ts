@@ -37,6 +37,7 @@ function drawYLabels() {
 }
 
 function drawXLabels() {
+  push();
   for (let a = 20; a <= 400; a += 30) {
     stroke(0)
     strokeWeight(3)
@@ -83,9 +84,10 @@ function drawXLabels() {
       }
       noStroke()
       textSize(15)
-      text(month[i], a + 5, 260, 30, 40)
+      text(month, a + 5, 260, 30, 40)
     }
   }
+    pop();
 }
 
 function drawTemperatures(temperatures: number[]) {

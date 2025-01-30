@@ -11,18 +11,30 @@ let points = 0;
 function setup() {
   createCanvas(300, 300);
 
-  // <<< Add code here
+  circle_interval = setInterval(addRandomCircle, waiting_time)
 }
 
 function draw() {
+  push()
   background("black");
+  for (let i = 0; i < circles_x.length; i++) {
+    noFill()
+    stroke("green")
+    strokeWeight(2)
+    circle(circles_x[i], circles_y[i], circles_diameter[i])
+  }
+  pop()
 
-  // <<< Add code here
+for(let i = 0; i < 1; i ++){
+  noFill()
+  stroke("green")
+  strokeWeight(2)
+  circle(random(0, 300), random(0, 300), random(10, 50))
+  }
 }
 
 function addRandomCircle() {
+  circles_x.push(random(0, 300))
+  circles_y.push(random(0, 300))
   circles_diameter.push(Math.floor(random(10, 50)))
-  for (let i = 0; i < circle_interval; i++) {
-    circle(circles_x[i], circles_y[i], circles_diameter[i])
-  }
 }

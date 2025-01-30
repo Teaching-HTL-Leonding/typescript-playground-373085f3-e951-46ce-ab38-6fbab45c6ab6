@@ -17,7 +17,7 @@ function setup() {
 function draw() {
   push()
   background("black");
-  for (let i = 0; i < circles_x.length; i++) {
+  for (let i = 0      ; i < circles_x.length; i++) {
     noFill()
     stroke("green")
     strokeWeight(2)

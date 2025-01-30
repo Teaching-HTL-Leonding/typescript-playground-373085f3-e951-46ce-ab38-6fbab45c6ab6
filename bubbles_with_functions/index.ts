@@ -4,14 +4,20 @@ const circles_diameter: number[] = [];
 
 let waiting_time = 3000;
 let circle_interval: number;
+let onecricle_invertal: number
 let level_interval: number;
 
 let points = 0;
 
 function setup() {
   createCanvas(300, 300);
-
+  onecricle_invertal = setInterval(addRandomCircle, 0)
   circle_interval = setInterval(addRandomCircle, waiting_time)
+  if(circle_interval){
+  circles_x.push(random(0, 300))
+  circles_y.push(random(0, 300))
+  circles_diameter.push(Math.floor(random(10, 50)))
+  }
 }
 
 function draw() {
@@ -25,12 +31,6 @@ function draw() {
   }
   pop()
 
-for(let i = 0; i < 1; i ++){
-  noFill()
-  stroke("green")
-  strokeWeight(2)
-  circle(random(0, 300), random(0, 300), random(10, 50))
-  }
 }
 
 function addRandomCircle() {

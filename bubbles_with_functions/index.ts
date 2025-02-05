@@ -15,6 +15,10 @@ function setup() {
   createCanvas(300, 300);
   circle_interval = setInterval(addRandomCircle, waiting_time)
   circle_interval = setInterval(addOneCircle, 0)
+  if (circles_x.length >= 10) {
+    stopGame()
+    return
+  }
 }
 
 function draw() {
@@ -33,6 +37,7 @@ function draw() {
     strokeWeight(2)
     circle(xx[i], yy[i], dd[i])
   }
+
   pop()
 
 }
@@ -49,6 +54,12 @@ function addOneCircle() {
   dd.push(Math.floor(random(10, 50)))
 }
 
-function isInside(){
+function stopGame() {
+  clearInterval(circle_interval)
+
+  noLoop()
+}
+
+function isInside() {
 
 }

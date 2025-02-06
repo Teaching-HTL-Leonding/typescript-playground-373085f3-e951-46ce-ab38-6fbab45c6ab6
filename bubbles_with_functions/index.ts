@@ -13,8 +13,8 @@ let points = 0;
 
 function setup() {
   createCanvas(300, 300);
+addRandomCircle()
   circle_interval = setInterval(addRandomCircle, waiting_time)
-  circle_interval = setInterval(addOneCircle, 0)
   if (circles_x.length >= 10) {
     stopGame()
     return
@@ -31,12 +31,6 @@ function draw() {
     strokeWeight(2)
     circle(circles_x[i], circles_y[i], circles_diameter[i])
   }
-  for (let i = 0; i <= 0; i++) {
-    noFill()
-    stroke("green")
-    strokeWeight(2)
-    circle(xx[i], yy[i], dd[i])
-  }
   
   textSize(20)
   fill("yellow")
@@ -51,12 +45,6 @@ function addRandomCircle() {
   circles_diameter.push(Math.floor(random(10, 50)))
 }
 
-function addOneCircle() {
-  xx.push(Math.floor(random(0, 300)))
-  yy.push(Math.floor(random(0, 300)))
-  dd.push(Math.floor(random(10, 50)))
-}
-
 function stopGame() {
   clearInterval(circle_interval)
 
@@ -67,7 +55,7 @@ function isInside(x: number, y: number, circle_index: number): boolean {
   let dx = x - circles_x[circle_index]
   let dy = y - circles_y[circle_index]
   let distance = Math.sqrt(dx * dx + dy * dy)
-  return distance < circles_diameter[circle_index] / 2
+  return distance <= circles_diameter[circle_index] / 2
 }
 
 function mouseClicked(){

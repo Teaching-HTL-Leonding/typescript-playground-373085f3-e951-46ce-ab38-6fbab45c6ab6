@@ -64,5 +64,6 @@ function isInside(x: number, y: number, circle_index: number): boolean {
   let dx = x - circles_x.length
   let dy = y - circles_y.length
   let distance = Math.sqrt(dx * dx + dy * dy)
-  return distance < 
+  return distance < circles_diameter.length 
 }
+

@@ -64,10 +64,10 @@ function stopGame() {
 }
 
 function isInside(x: number, y: number, circle_index: number): boolean {
-  let dx = x - circles_x.length
-  let dy = y - circles_y.length
+  let dx = x - circles_x[circle_index]
+  let dy = y - circles_y[circle_index]
   let distance = Math.sqrt(dx * dx + dy * dy)
-  return distance < circles_diameter.length 
+  return distance < circles_diameter[circle_index] / 2
 }
 
 function mouseClicked(){

@@ -37,7 +37,10 @@ function draw() {
     strokeWeight(2)
     circle(xx[i], yy[i], dd[i])
   }
-
+  
+  textSize(20)
+  fill("yellow")
+  text(points, 0, 20)
   pop()
 
 }
@@ -67,3 +70,13 @@ function isInside(x: number, y: number, circle_index: number): boolean {
   return distance < circles_diameter.length 
 }
 
+function mouseClicked(){
+  for(let i = 0; i < circles_x.length; i ++){
+    if(isInside(mouseX, mouseY, i)){
+      circles_x.splice(i, 1)
+      circles_y.splice(i, 1)
+      circles_diameter.splice(i, 1)
+      points ++
+    }
+  }
+}

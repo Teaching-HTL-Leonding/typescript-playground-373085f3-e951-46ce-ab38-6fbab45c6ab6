@@ -16,7 +16,7 @@
 * * 8 wrong: Hat
 * * 9 wrong: Top body part
 * * 10 wrong: GAME OVER
-*/
+*/ 
 function drawSnowman(numberOfWrongGuesses: number) {
     // Set center of X axis
     translate(130, 0);
@@ -50,7 +50,12 @@ function drawSnowman(numberOfWrongGuesses: number) {
     fill("black");
     translate(0, 180);
     rotate(45);
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 3; i++) {
+        circle(40, 0, 12);
+        rotate(18);
+    }
+
+        for (let i = 0; i < 3; i++) {
         circle(40, 0, 12);
         rotate(18);
     }
@@ -58,11 +63,22 @@ function drawSnowman(numberOfWrongGuesses: number) {
 
     // Knobs
     push();
-    for (let i = 0; i < 6; i++) {
+    if(numberOfWrongGuesses < 1){
+    for (let i = 0; i < 3; i++) {
         noStroke();
         fill("black");
         circle(0, 275, 15);
         translate(0, 25);
+    }
+    }
+
+        if(numberOfWrongGuesses < 2){
+    for (let i = 0; i < 3; i++) {
+        noStroke();
+        fill("black");
+        circle(0, 275, 15);
+        translate(0, 25);
+    }
     }
     pop();
 

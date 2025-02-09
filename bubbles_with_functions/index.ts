@@ -48,6 +48,10 @@ function stopGame() {
   clearInterval(circle_interval)
   clearInterval(level_interval)
   noLoop()
+  fill("red")
+  noStroke()
+  textSize(50)
+  text(`Game Over\nPoints: ${points}`, 30, 120)
 }
 
 function isInside(x: number, y: number, circle_index: number): boolean {

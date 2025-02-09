@@ -1,9 +1,6 @@
 const circles_x: number[] = [];
 const circles_y: number[] = [];
 const circles_diameter: number[] = [];
-const xx: number[] = []
-const yy: number[] = []
-const dd: number[] = []
 
 let waiting_time = 3000;
 let circle_interval: number;

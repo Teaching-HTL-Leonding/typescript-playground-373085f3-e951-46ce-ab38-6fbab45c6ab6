@@ -9,10 +9,13 @@ let wagon: p5.Image;
 
 const BASE_URL = "https://cddataexchange.blob.core.windows.net/images/trains";
 
+function preload() {
+
+}
 function setup() {
     createCanvas(800, 550);
     railroad = loadImage(`${BASE_URL}/railroad-straight.png`);
-    wagon = loadImage(`${BASE_URL}/train-carrige-wood.png`)
+    wagon = loadImage(`${BASE_URL}/train-carriage-wood.png`)
     // <<< Load the image of a train wagon (train-carriage-wood.png)
 }
 
@@ -27,13 +30,30 @@ function draw() {
     // the right.
     translate(850, -100);
 
-    // <<< For task 2, add another loop here
 
     // Draw five railroad segments
     for (let i = 0; i < 5; i++) {
         drawRailroad(i);
     }
 
+    for (let i = 0; i < 6; i++) {
+        drawWagon(i)
+    }
+    for (let i = 0; i < 5; i++) {
+        drawRailroad2(i);
+    }
+
+    for (let i = 0; i < 6; i++) {
+        drawWagon2(i)
+    }
+
+        for (let i = 0; i < 5; i++) {
+        drawRailroad3(i);
+    }
+
+    for (let i = 0; i < 6; i++) {
+        drawWagon3(i)
+    }
     // <<< Add code to draw six train wagons
 }
 
@@ -44,6 +64,25 @@ function drawRailroad(ix: number) {
 }
 
 function drawWagon(ix: number) {
-    image(railroad, -WAGON_WIDTH * ix, WAGON_HEIGHT * ix, wagon.width, wagon.height);
+    image(wagon, -WAGON_WIDTH * ix, WAGON_HEIGHT * ix, wagon.width, wagon.height);
+
+}
+function drawRailroad2(ix: number) {
+    image(railroad, -RAILROAD_WIDTH * ix + 100, RAILROAD_HEIGHT * ix + 100 , railroad.width, railroad.height);
+
+}
+
+function drawWagon2(ix: number) {
+    image(wagon, -WAGON_WIDTH * ix + 100, WAGON_HEIGHT * ix + 100 , wagon.width, wagon.height);
+
+}
+
+function drawRailroad3(ix: number) {
+    image(railroad, -RAILROAD_WIDTH * ix - 100, RAILROAD_HEIGHT * ix - 100 , railroad.width, railroad.height);
+
+}
+
+function drawWagon3(ix: number) {
+    image(wagon, -WAGON_WIDTH * ix - 100, WAGON_HEIGHT * ix - 100 , wagon.width, wagon.height);
 
 }

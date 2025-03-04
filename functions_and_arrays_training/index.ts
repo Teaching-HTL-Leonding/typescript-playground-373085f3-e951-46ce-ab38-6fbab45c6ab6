@@ -53,15 +53,18 @@ function setup() {
 function getSum(numbersString: string): number {
     let sum = 0
     let currentnumber = ""
-    for(let i = 0; i < numbersString.length; i ++){
-        if(numbersString[i] === ","){
+    for (let i = 0; i < numbersString.length; i++) {
+        if (numbersString[i] === ",") {
+            sum += parseInt(currentnumber)
             currentnumber = ""
-        }else{
+        } else {
             currentnumber += numbersString[i]
         }
     }
-        parseInt(currentnumber)
-        return currentnumber
+    if (currentnumber) {
+        sum += parseInt(currentnumber)
+    }
+    return sum
 }
 
 /**
@@ -71,7 +74,24 @@ function getSum(numbersString: string): number {
 * @returns The start index of the number, -1 if the number is not found
 */
 function getIndexOf(numbersString: string, number: number): number {
-    return -1; // <<< Remove this line and implement the function
+    let current = ""
+    let result = 0
+    for (let i = 0; i < numbersString.length; i++) {
+        if (numbersString[i] === ",") {
+            if (parseInt(current) === number) {
+                return result;
+            }
+            current = ""
+            result = i + 1
+        } else {
+            current += numbersString[i]
+        }
+
+    }
+    if (parseInt(current) === number) {
+        return result
+    }
+    return -1
 }
 
 /**

@@ -6,6 +6,7 @@ const WAGON_HEIGHT = 113;
 
 let railroad: p5.Image;
 
+let trainCars: p5.Image[] = []
 /** Array of wagons for train (for base requirements) */
 let train: p5.Image[] = [];
 
@@ -25,7 +26,8 @@ const TRACKS = "TLB,TCCG,TCTL,TCW,TCL,TCCR;TEDA,TEDB,TEDB,TEDC,TEDB;TDA,TCF,TCC,
 function preload() {
     railroad = loadImage(`${BASE_URL}/railroad-straight.png`)
     for (let i = 0; i < imageUrls.length; i++) {
-        train.push(loadImage(`${BASE_URL}/${imageUrls[i]}`))
+       const image = loadImage(`${BASE_URL}/${imageUrls[i]}`)
+        trainCars.push(image)
     }
 
     // <<< Add code to load all images (see imageUrls in wagons.ts).
@@ -36,7 +38,6 @@ function preload() {
 function setup() {
     createCanvas(800, 550);
 
-    // <<< Add code to parse the TRAIN string and store the result in the 
     //     train array (base requirements) or the trains array (ADVANCED requirements).
 }
 
@@ -58,7 +59,30 @@ function draw() {
     }
 }
 
-// <<< Add additional functions here
+function parseTrain(trainString: string): p5.Image[] {
+    const result: p5.Image[] = [];
+
+    let wagon = "";
+    for (let i = 0; i < trainString.length; i++) {
+        if (trainString[i] === ",") {
+            result.push(trainCars[getWagonIndex(wagon)]);
+            wagon = "";
+        } else {
+            wagon += trainString[i];
+        }
+    }
+
+    result.push(trainCars[getWagonIndex(wagon)]);
+    return result.reverse();
+}
+
+function getWagonIndex(wagonAbbreviation: string): number {
+    for (let i = 0; i < abbreviations.length; i++) {
+        if (wagonAbbreviation === abbreviations[i]) {
+            return i;
+        }
+    }
+}
 
 /** Draw a railroad segment */
 function drawRailroad(ix: number) {

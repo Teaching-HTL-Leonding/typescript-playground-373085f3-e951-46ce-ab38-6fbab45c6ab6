@@ -136,8 +136,9 @@ function findIndexInArray(array: number[], number: number): number {
 * * A: Ace
 */
 function decodeCCard(cardShortcode: string): string {
-    let suites = ""
-    let ranks = ""
+    let suites = cardShortcode[0];
+    let ranks = cardShortcode[1];
+
     for (let i = 0; i < cardShortcode.length; i++) {
         switch (i) {
             case 0:
@@ -159,47 +160,44 @@ function decodeCCard(cardShortcode: string): string {
                 ranks = "2"
                 break;
             case 1:
-                ranks = "2"
+                ranks = "3"
                 break;
             case 2:
-                ranks = "2"
+                ranks = "4"
                 break;
             case 3:
-                ranks = "2"
+                ranks = "5"
                 break;
             case 4:
-                ranks = "2"
+                ranks = "6"
                 break;
             case 5:
-                ranks = "2"
+                ranks = "7"
                 break;
             case 6:
-                ranks = "2"
+                ranks = "8"
                 break;
             case 7:
-                ranks = "2"
+                ranks = "9"
                 break;
             case 8:
-                ranks = "2"
+                ranks = "ten"
                 break;
             case 9:
-                ranks = "2"
+                ranks = "Jack"
                 break;
             case 10:
-                ranks = "2"
+                ranks = "Queen"
                 break;
             case 11:
-                ranks = "2"
+                ranks = "King"
                 break;
             case 12:
-                ranks = "2"
-                break;
-            case 13:
-                ranks = "2"
+                ranks = "Ace"
                 break;
         }
     }
-    return ""; // <<< Remove this line and implement the function
+return `${suites} of ${ranks}`
 }
 
 /**

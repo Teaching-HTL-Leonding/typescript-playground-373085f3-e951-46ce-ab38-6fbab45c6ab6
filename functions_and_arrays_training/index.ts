@@ -197,7 +197,7 @@ function decodeCCard(cardShortcode: string): string {
                 break;
         }
     }
-return `${suites} of ${ranks}`
+    return `${suites} of ${ranks}`
 }
 
 /**
@@ -206,5 +206,28 @@ return `${suites} of ${ranks}`
 * @returns An array of even numbers (e.g. [2, 30, 4]), empty array if no even numbers are found
 */
 function findAllEvenNumbers(numberString: string): number[] {
-    return []; // <<< Remove this line and implement the function
+    let array = []
+    let a1 = []
+    let a2 = []
+    let a3 = []
+    let fa = []
+    for (let i = 0; i < numberString.length; i++) {
+        if (numberString[i] === ",") {
+            array = []
+        } else {
+            array.push(numberString[i])
+        }
+        if (array[i] === 2) {
+            a1.push(2)
+            fa.push(a1)
+        } else if (array[i] === 30) {
+            a2.push(30)
+            fa.push(a2)
+        } else if (array[i] === 4) {
+            a1.push(4)
+            fa.push(a3)
+        }
+        return fa
+    }
+    return []
 }

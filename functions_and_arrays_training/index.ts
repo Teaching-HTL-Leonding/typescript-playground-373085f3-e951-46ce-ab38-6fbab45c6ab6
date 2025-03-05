@@ -67,6 +67,7 @@ function getSum(numbersString: string): number {
     return sum
 }
 
+
 /**
 * Get the start index of a number in a string of numbers separated by commas
 * @param numbersString - A string of numbers separated by commas (e.g. "1,2,30,4,5")
@@ -74,22 +75,21 @@ function getSum(numbersString: string): number {
 * @returns The start index of the number, -1 if the number is not found
 */
 function getIndexOf(numbersString: string, number: number): number {
-    let current = ""
-    let result = 0
+    let currentnumber = ""
+    let getIndex = 0
     for (let i = 0; i < numbersString.length; i++) {
         if (numbersString[i] === ",") {
-            if (parseInt(current) === number) {
-                return result;
+            if (parseInt(currentnumber) === number) {
+                return getIndex
             }
-            current = ""
-            result = i + 1
+            currentnumber = ""
+            getIndex = i + 1
         } else {
-            current += numbersString[i]
+            currentnumber += numbersString[i]
         }
-
     }
-    if (parseInt(current) === number) {
-        return result
+    if (parseInt(currentnumber) === number) {
+        return getIndex
     }
     return -1
 }
@@ -101,7 +101,17 @@ function getIndexOf(numbersString: string, number: number): number {
 * @returns The index of the number, -1 if the number is not found
 */
 function findIndexInArray(array: number[], number: number): number {
-    return -1; // <<< Remove this line and implement the function
+    let currentnumber = ""
+    let findIndex = 0
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === number) {
+            return findIndex
+        } else {
+            currentnumber = ""
+            findIndex = i + 1
+        }
+    }
+    return -1
 }
 
 /**
@@ -126,6 +136,69 @@ function findIndexInArray(array: number[], number: number): number {
 * * A: Ace
 */
 function decodeCCard(cardShortcode: string): string {
+    let suites = ""
+    let ranks = ""
+    for (let i = 0; i < cardShortcode.length; i++) {
+        switch (i) {
+            case 0:
+                suites = "Spades"
+                break;
+            case 1:
+                suites = "Hearts"
+                break;
+            case 2:
+                suites = "Diamonds"
+                break;
+            case 3:
+                suites = "Clubs"
+                break;
+        }
+
+        switch (i) {
+            case 0:
+                ranks = "2"
+                break;
+            case 1:
+                ranks = "2"
+                break;
+            case 2:
+                ranks = "2"
+                break;
+            case 3:
+                ranks = "2"
+                break;
+            case 4:
+                ranks = "2"
+                break;
+            case 5:
+                ranks = "2"
+                break;
+            case 6:
+                ranks = "2"
+                break;
+            case 7:
+                ranks = "2"
+                break;
+            case 8:
+                ranks = "2"
+                break;
+            case 9:
+                ranks = "2"
+                break;
+            case 10:
+                ranks = "2"
+                break;
+            case 11:
+                ranks = "2"
+                break;
+            case 12:
+                ranks = "2"
+                break;
+            case 13:
+                ranks = "2"
+                break;
+        }
+    }
     return ""; // <<< Remove this line and implement the function
 }
 

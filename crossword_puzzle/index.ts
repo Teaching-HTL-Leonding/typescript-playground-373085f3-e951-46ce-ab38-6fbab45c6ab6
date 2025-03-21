@@ -31,21 +31,25 @@ const hints: string[] = []
 
 let crosswordline = ''
 function setup() {
-    createCanvas(500, 1000)
+    createCanvas(1000, 1000)
     background("white")
+    fill("yellow")
+    noStroke()
+    rect(120, 0, cellsize, 450)
 
+    parseCrossword()
+    drawCrosswordCells()
     const zeilen = inZeilenAufteilen(crossword)
-    drawAnimals()
 
 }
 
 //zerlegt crossword mit split und gibt die Zeilen als array zurück
-function inZeilenAufteilen(crossword: string): string[]{
+function inZeilenAufteilen(crossword: string): string[] {
     return crossword.split('\n')
 }
 
-function parseCrossword (){
-    for(const line of inZeilenAufteilen(crossword)){
+function parseCrossword() {
+    for (const line of inZeilenAufteilen(crossword)) {
         const parts = line.split(',')
         animals.push(parts[0])
         startPositions.push(parseInt(parts[1]))
@@ -53,12 +57,22 @@ function parseCrossword (){
     }
 }
 
-function drawAnimals(){
-    for(let i = 0; i < animals.length; i ++){
-        textSize(10)
-        fill(0)
-        text(animals[i], 0 ,0)
-        translate(50, 0)
-    }
-}
+const cellsize = 30;
 
+function drawCrosswordCells() {
+    stroke("black")
+    strokeWeight(1)
+    noFill()
+    translate(4 * cellsize, 0)
+    for (let i = 0; i < animals.length; i++) {
+        push()
+        for (let j = 0; j < animals[i].length; j++) {
+            rect(startPositions[i] * cellsize, 0, cellsize, cellsize)
+            translate(cellsize, 0)
+        }
+        pop()
+
+        translate(0, cellsize)
+    }
+    
+}

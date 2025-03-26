@@ -94,8 +94,9 @@ function drawCorrectLetters(){
     for(let i = 0; i < animals.length; i ++){
         push()
     let words = animals[i]
-    for(let word of words){
-        text(words[word], 0, 0)
+    for(let word = 0; word < words.length; word ++){
+        textSize(cellsize - 5)
+        text(words[word], -startPositions[i] * cellsize, -420)
         translate(cellsize, 0)
     }
     translate(0, cellsize)

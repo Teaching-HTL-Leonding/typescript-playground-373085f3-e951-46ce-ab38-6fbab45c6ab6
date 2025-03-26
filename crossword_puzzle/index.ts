@@ -39,6 +39,8 @@ function setup() {
 
     parseCrossword()
     drawCrosswordCells()
+    drawHints()
+    drawCorrectLetters()
     const zeilen = inZeilenAufteilen(crossword)
 
 }
@@ -74,5 +76,29 @@ function drawCrosswordCells() {
 
         translate(0, cellsize)
     }
-    
+
+}
+
+function drawHints() {
+    push()
+    for (let i = 0; i < hints.length; i++) {
+        noStroke()
+        fill(0)
+        text(hints[i], 400 , -430)
+    translate(0, cellsize + 0.5)
+    }
+    pop()
+}
+
+function drawCorrectLetters(){
+    for(let i = 0; i < animals.length; i ++){
+        push()
+    let words = animals[i]
+    for(let word of words){
+        text(words[word], 0, 0)
+        translate(cellsize, 0)
+    }
+    translate(0, cellsize)
+    pop()
+    }
 }

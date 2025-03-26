@@ -91,8 +91,8 @@ function drawHints() {
 }
 
 function drawCorrectLetters(){
-    for(let i = 0; i < animals.length; i ++){
         push()
+    for(let i = 0; i < animals.length; i ++){
     let words = animals[i]
     for(let word = 0; word < words.length; word ++){
         textSize(cellsize - 5)
@@ -100,6 +100,6 @@ function drawCorrectLetters(){
         translate(cellsize, 0)
     }
     translate(0, cellsize)
-    pop()
     }
+    pop()
 }

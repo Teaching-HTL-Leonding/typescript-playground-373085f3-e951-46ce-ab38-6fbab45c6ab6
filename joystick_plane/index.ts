@@ -26,14 +26,15 @@ function setup() {
 function draw() {
   background("lightblue");
 
-  if (fighterPositionX < width) {
-    const speedx = (x - 250) / 5
-    fighterPositionX += speedx
-  } if (fighterPositionY < height) {
-    const speedy = (y - 450) / 5
-    fighterPositionY += speedy
-  }
+  const speedx = (x - 250) / 5
+  const speedy = (y - 450) / 5
 
+  if (fighterPositionX >= -250 && fighterPositionX <= 250) {
+    fighterPositionX += speedx
+  }
+  if (fighterPositionY >= -250 && fighterPositionY <= 250) {
+    fighterPositionY += speedy
+  } 
 
   push();
   imageMode(CENTER);
@@ -49,6 +50,14 @@ function draw() {
   fill(0)
   stroke("black")
   circle(x, y, 20)
+
+  textSize(15)
+  fill("black")
+  noStroke()
+  text(`Fighterposition: ${Math.round(fighterPositionX)},${Math.round(fighterPositionY)}`, 10, 480)
+  text(`Speed: ${Math.round(speedx)},${Math.round(speedy)}`, 10, 450)
+
+  text(`${mouseX}  ${mouseY}`, 10, 100)
 }
 
 function mousePressed() {

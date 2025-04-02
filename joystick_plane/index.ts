@@ -28,13 +28,21 @@ function draw() {
 
   const speedx = (x - 250) / 5
   const speedy = (y - 450) / 5
-
-  if (fighterPositionX >= -250 && fighterPositionX <= 250) {
     fighterPositionX += speedx
-  }
-  if (fighterPositionY >= -250 && fighterPositionY <= 250) {
     fighterPositionY += speedy
+
+  if (fighterPositionX < -250 ) {
+    fighterPositionX = -250
+  }
+  if (fighterPositionY < -250 ) {
+    fighterPositionY = -250
   } 
+   if (fighterPositionX > 250) {
+    fighterPositionX = 250
+  }
+  if (fighterPositionY > 250) {
+    fighterPositionY = 250
+  }
 
   push();
   imageMode(CENTER);
@@ -56,8 +64,6 @@ function draw() {
   noStroke()
   text(`Fighterposition: ${Math.round(fighterPositionX)},${Math.round(fighterPositionY)}`, 10, 480)
   text(`Speed: ${Math.round(speedx)},${Math.round(speedy)}`, 10, 450)
-
-  text(`${mouseX}  ${mouseY}`, 10, 100)
 }
 
 function mousePressed() {
@@ -90,4 +96,5 @@ function phytagoras(): boolean {
   if (distance <= 10) {
     return true
   }
+
 }    

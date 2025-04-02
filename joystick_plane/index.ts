@@ -25,20 +25,15 @@ function setup() {
 
 function draw() {
   background("lightblue");
-  const speedx = (x - 250) / 5
-  const speedy = (y - 450) / 5
-  fighterPositionX += speedx
-  fighterPositionY += speedy
 
-  if(fighterPositionX <= 0 ){
-    fighterPositionX = 0
-  } else if(fighterPositionX >= 500 ){
-    fighterPositionX = 500
-  } else  if(fighterPositionY <= 0 ){
-    fighterPositionY = 0
-  } else  if(fighterPositionY >= 500 ){
-    fighterPositionY = 500
+  if (fighterPositionX < width) {
+    const speedx = (x - 250) / 5
+    fighterPositionX += speedx
+  } if (fighterPositionY < height) {
+    const speedy = (y - 450) / 5
+    fighterPositionY += speedy
   }
+
 
   push();
   imageMode(CENTER);
@@ -75,6 +70,7 @@ function mouseDragged() {
 function mouseReleased() {
   console.log('mouseReleased')
 
+  isDragging = false
 }
 
 function phytagoras(): boolean {

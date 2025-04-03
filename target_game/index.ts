@@ -5,6 +5,7 @@ let yy = 0
 let d1 = 100
 let d2 = 140
 let punkte = 0
+//Zeit
 let waitingTime = 1000
 let timeInterval = 0
 
@@ -12,37 +13,43 @@ let isDragging = false
 
 function setup() {
   createCanvas(800, 600);
+  //Position vom blauen Kreis
   x = random(50, 750)
   y = random(50, 550)
+  //Position vom großen Kreis
   xx = random(70, 730)
   yy = random(70, 530)
 
+//Wenn der blaue und große Kreis sie überschneiden, bekommt der blaue Kreis eine andere Position
   while (distanceR(x - xx, y - yy) < 120) {
     x = random(50, 750)
     y = random(50, 550)
   }
 
   timeInterval = setInterval(tick, waitingTime)
-  // <<< Add setup logic here
 }
 
 function draw() {
   background("lightgray");
 
+// Der große Kreis, indem man den blauen Kreis hineingibt und dann Punkte bekommt
   noFill()
   stroke("black")
   circle(xx, yy, d2)
 
+//Der blaue Kreis, der dann bewegt wird
   fill("blue")
   noStroke()
   circle(x, y, d1)
 
+//Hier werde die Punkte und die Zeit anggeben
   textSize(20)
   fill("black")
   noStroke()
   text(`Score: ${punkte}`, 10, 580)
   text(`Time:${waitingTime }`, 700, 580)
-  
+
+// Wenn die Zeit um ist, ist das Spiel vorbei
  if(waitingTime <= 0){
   gameover()
   fill("lightgrey")
@@ -53,18 +60,22 @@ function draw() {
  }
 }
 
+//Diese Funktion gibt an wenn man mit der Mause klickt und der Mausezeiger im Kreis ist, 
+//wird isDragging true
 function mousePressed() {
   isDragging = phytagoras(x - mouseX, y - mouseY, d1)
 
 }
-
+//Wenn isDragging true ist kann man den Kreis bewegen wo man will
 function mouseDragged() {
   if (isDragging) {
     x = mouseX
     y = mouseY
   }
 }
-
+//Wenn man die Maus los lässt ist isDragging wieder false und
+//man kann ich nicht mit der Maus bewegen. Falls der Kreis im anderen Kreis ist
+//bekommt man einen Punkt
 function mouseReleased() {
   isDragging = false
   if (distanceR(x - xx, y - yy) < 20) {
@@ -74,6 +85,9 @@ function mouseReleased() {
   }
 }
 
+// Mit dieser funktion kann man den Phytagoras aussrechen. Hier wird die Entfernung(distance)
+//ausgerechnet. Wenn die entfernung kleiner als den gegebenen Parameter "d", der den Durchmesser
+//bestimmt, dann wir true zurückgegeben
 function phytagoras(dx: number, dy: number, d: number): boolean {
   let distance = Math.sqrt(dx * dx + dy * dy)
 
@@ -82,15 +96,18 @@ function phytagoras(dx: number, dy: number, d: number): boolean {
   }
 }
 
+//Hier passiert da sselbe, nur dass die Entfernung zurückgegeben
 function distanceR(dx: number, dy: number): number {
   let distance = Math.sqrt(dx * dx + dy * dy)
   return distance
 }
 
+// Diese Funktion verringert die Zeit
 function tick(){
 waitingTime --
 }
 
+// Diese Funktion ermöglicht, dass das Spiel beendet wird
 function gameover(){
   clearInterval(timeInterval)
 }

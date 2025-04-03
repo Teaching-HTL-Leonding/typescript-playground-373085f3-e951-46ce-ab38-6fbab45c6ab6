@@ -5,7 +5,7 @@ let yy = 0
 let d1 = 100
 let d2 = 140
 let punkte = 0
-let waitingTime = 60
+let waitingTime = 1000
 let timeInterval = 0
 
 let isDragging = false
@@ -42,6 +42,7 @@ function draw() {
   noStroke()
   text(`Score: ${punkte}`, 10, 580)
   text(`Time:${waitingTime }`, 700, 580)
+  
  if(waitingTime <= 0){
   gameover()
   fill("lightgrey")
@@ -87,7 +88,7 @@ function distanceR(dx: number, dy: number): number {
 }
 
 function tick(){
- waitingTime --
+waitingTime --
 }
 
 function gameover(){

@@ -4,6 +4,7 @@ let xx = 0
 let yy = 0
 let d1 = 100
 let d2 = 140
+let punkte = 0
 
 let isDragging = false
 
@@ -11,8 +12,8 @@ function setup() {
   createCanvas(800, 600);
   x = random(50, 750)
   y = random(50, 550)
-  xx = random(50, 750)
-  yy = random(50, 550)
+  xx = random(70, 730)
+  yy = random(70, 530)
 
   while (distanceR(x - xx, y - yy) < 120) {
     x = random(50, 750)
@@ -31,6 +32,11 @@ function draw() {
   fill("blue")
   noStroke()
   circle(x, y, d1)
+  
+  textSize(40)
+  fill("black")
+  noStroke()
+  text(`Score: ${punkte}`, 5, 750)
 }
 
 function mousePressed() {
@@ -47,6 +53,9 @@ function mouseDragged() {
 
 function mouseReleased() {
   isDragging = false
+  if (distanceR(x - xx, y - yy) < 20) {
+    punkte++
+  }
 }
 
 function phytagoras(dx: number, dy: number, d: number): boolean {

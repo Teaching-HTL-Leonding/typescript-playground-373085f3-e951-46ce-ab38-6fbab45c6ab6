@@ -5,6 +5,8 @@ let yy = 0
 let d1 = 100
 let d2 = 140
 let punkte = 0
+let waitingTime = 60
+let timeInterval = 0
 
 let isDragging = false
 
@@ -19,6 +21,8 @@ function setup() {
     x = random(50, 750)
     y = random(50, 550)
   }
+
+  timeInterval = setInterval(tick, waitingTime)
   // <<< Add setup logic here
 }
 
@@ -37,6 +41,15 @@ function draw() {
   fill("black")
   noStroke()
   text(`Score: ${punkte}`, 10, 580)
+  text(`Time:${waitingTime }`, 700, 580)
+ if(waitingTime <= 0){
+  gameover()
+  fill("lightgrey")
+  rect(0, 0, 800, 600)
+  textSize(100)
+  fill("black")
+  text(`Game Over!\n Final Score:${punkte}`, 100, 200)
+ }
 }
 
 function mousePressed() {
@@ -71,4 +84,12 @@ function phytagoras(dx: number, dy: number, d: number): boolean {
 function distanceR(dx: number, dy: number): number {
   let distance = Math.sqrt(dx * dx + dy * dy)
   return distance
+}
+
+function tick(){
+ waitingTime --
+}
+
+function gameover(){
+  clearInterval(timeInterval)
 }

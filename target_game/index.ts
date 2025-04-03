@@ -23,7 +23,7 @@ function setup() {
   yy = random(70, 530)
 
   //Wenn der blaue und große Kreis sie überschneiden, bekommt der blaue Kreis eine andere Position
-  while (distanceR(x - xx, y - yy) < 120) {
+  while (distanceRadius(x - xx, y - yy) < 120) {
     x = random(50, 750)
     y = random(50, 550)
   }
@@ -80,7 +80,7 @@ function mouseDragged() {
 //bekommt man einen Punkt
 function mouseReleased() {
   isDragging = false
-  if (distanceR(x - xx, y - yy) < 20) {
+  if (distanceRadius(x - xx, y - yy) < 20) {
     xx = random(70, 730)
     yy = random(70, 530)
     punkte++
@@ -99,7 +99,7 @@ function phytagoras(dx: number, dy: number, d: number): boolean {
 }
 
 //Hier passiert da sselbe, nur dass die Entfernung zurückgegeben
-function distanceR(dx: number, dy: number): number {
+function distanceRadius(dx: number, dy: number): number {
   let distance = Math.sqrt(dx * dx + dy * dy)
   return distance
 }

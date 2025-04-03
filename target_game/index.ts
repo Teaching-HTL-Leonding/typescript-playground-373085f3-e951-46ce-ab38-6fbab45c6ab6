@@ -5,8 +5,10 @@ let yy = 0
 let d1 = 100
 let d2 = 140
 let punkte = 0
-//Zeit
+//Wie viele mllisekunden 
 let waitingTime = 1000
+//Zeit
+let time = 60
 let timeInterval = 0
 
 let isDragging = false
@@ -20,7 +22,7 @@ function setup() {
   xx = random(70, 730)
   yy = random(70, 530)
 
-//Wenn der blaue und große Kreis sie überschneiden, bekommt der blaue Kreis eine andere Position
+  //Wenn der blaue und große Kreis sie überschneiden, bekommt der blaue Kreis eine andere Position
   while (distanceR(x - xx, y - yy) < 120) {
     x = random(50, 750)
     y = random(50, 550)
@@ -32,32 +34,32 @@ function setup() {
 function draw() {
   background("lightgray");
 
-// Der große Kreis, indem man den blauen Kreis hineingibt und dann Punkte bekommt
+  // Der große Kreis, indem man den blauen Kreis hineingibt und dann Punkte bekommt
   noFill()
   stroke("black")
   circle(xx, yy, d2)
 
-//Der blaue Kreis, der dann bewegt wird
+  //Der blaue Kreis, der dann bewegt wird
   fill("blue")
   noStroke()
   circle(x, y, d1)
 
-//Hier werde die Punkte und die Zeit anggeben
+  //Hier werde die Punkte und die Zeit anggeben
   textSize(20)
   fill("black")
   noStroke()
   text(`Score: ${punkte}`, 10, 580)
-  text(`Time:${waitingTime }`, 700, 580)
+  text(`Time:${time}`, 700, 580)
 
-// Wenn die Zeit um ist, ist das Spiel vorbei
- if(waitingTime <= 0){
-  gameover()
-  fill("lightgrey")
-  rect(0, 0, 800, 600)
-  textSize(100)
-  fill("black")
-  text(`Game Over!\n Final Score:${punkte}`, 100, 200)
- }
+  // Wenn die Zeit um ist, ist das Spiel vorbei
+  if (time <= 0) {
+    gameover()
+    fill("lightgrey")
+    rect(0, 0, 800, 600)
+    textSize(100)
+    fill("black")
+    text(`Game Over!\n Final Score:${punkte}`, 100, 200)
+  }
 }
 
 //Diese Funktion gibt an wenn man mit der Mause klickt und der Mausezeiger im Kreis ist, 
@@ -103,11 +105,11 @@ function distanceR(dx: number, dy: number): number {
 }
 
 // Diese Funktion verringert die Zeit
-function tick(){
-waitingTime --
+function tick() {
+  time--
 }
 
 // Diese Funktion ermöglicht, dass das Spiel beendet wird
-function gameover(){
+function gameover() {
   clearInterval(timeInterval)
 }

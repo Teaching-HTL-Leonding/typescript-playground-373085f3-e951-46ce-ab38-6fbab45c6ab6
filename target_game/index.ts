@@ -32,11 +32,11 @@ function draw() {
   fill("blue")
   noStroke()
   circle(x, y, d1)
-  
-  textSize(40)
+
+  textSize(20)
   fill("black")
   noStroke()
-  text(`Score: ${punkte}`, 5, 750)
+  text(`Score: ${punkte}`, 10, 580)
 }
 
 function mousePressed() {
@@ -54,6 +54,8 @@ function mouseDragged() {
 function mouseReleased() {
   isDragging = false
   if (distanceR(x - xx, y - yy) < 20) {
+    xx = random(70, 730)
+    yy = random(70, 530)
     punkte++
   }
 }
